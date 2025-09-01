@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Cpu, Shield, Workflow, Coins, Users2, Link2 } from "lucide-react";
+import { BookOpen, Cpu, Shield, Workflow, Users2, Link2 } from "lucide-react";
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
