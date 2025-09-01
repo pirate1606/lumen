@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Github, Linkedin } from "lucide-react";
+
 export default function Footer() {
   return (
     <footer className="mt-16 border-t bg-white/70 backdrop-blur">
@@ -10,20 +12,24 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4 text-sm">
             <a
-              className="hover:underline"
+              className="inline-flex items-center gap-2 hover:underline"
               href="https://www.linkedin.com/in/sanchit1606/"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
             >
-              LinkedIn
+              <Linkedin className="size-5" />
+              <span>LinkedIn</span>
             </a>
             <a
-              className="hover:underline"
+              className="inline-flex items-center gap-2 hover:underline"
               href="https://github.com/sanchit1606"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub"
             >
-              GitHub
+              <Github className="size-5" />
+              <span>GitHub</span>
             </a>
           </div>
         </div>

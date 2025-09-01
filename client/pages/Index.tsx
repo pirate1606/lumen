@@ -11,7 +11,6 @@ import About from "@/components/lumen/About";
 import Contact from "@/components/lumen/Contact";
 import Footer from "@/components/lumen/Footer";
 import SectionDivider from "@/components/lumen/SectionDivider";
-import Technical from "@/components/lumen/Technical";
 
 export default function Index() {
   return (
@@ -29,7 +28,6 @@ export default function Index() {
         <Demo />
         <Emergency />
         <About />
-        <Technical />
         <Contact />
       </main>
       <Footer />
