@@ -76,54 +76,62 @@ export async function handleLabAnalyze(req: Request, res: Response) {
     if (!file)
       return res.status(400).json({ error: "Missing file field 'file'" });
 
+    const HF_DONUT = "https://api-inference.huggingface.co/models/naver-clova-ix/donut-base-finetuned-docvqa";
+    const HF_FALLBACK = "https://api-inference.huggingface.co/models/impira/layoutlm-document-qa";
+
+    let data: any;
+
     if (file.mimetype === "application/pdf") {
-      return res
-        .status(415)
-        .json({
-          error: "Unsupported file type for prototype",
-          details:
-            "Please upload a PNG or JPEG image of the lab report for now.",
+      // Send PDF binary to models; Donut first, then fallback
+      const tryModel = async (url: string) =>
+        fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${key}`,
+            "Content-Type": file.mimetype,
+            Accept: "application/json",
+          },
+          body: file.buffer,
         });
-    }
 
-    if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
-      return res
-        .status(415)
-        .json({
-          error: "Unsupported file type",
-          details: `Received ${file.mimetype}. Allowed: PNG or JPEG.`,
+      let r = await tryModel(HF_DONUT);
+      if (!r.ok) {
+        const t = await r.text();
+        r = await tryModel(HF_FALLBACK);
+        if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
+      }
+      data = await r.json();
+    } else {
+      if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
+        return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.` });
+      }
+      const base64 = file.buffer.toString("base64");
+      const dataUri = `data:${file.mimetype};base64,${base64}`;
+      const payload = {
+        inputs: {
+          question: "Extract all test names and values as a JSON object with keys as short test names and values with units.",
+          image: dataUri,
+        },
+        parameters: { return_full_text: false },
+      };
+      const tryModel = async (url: string) =>
+        fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${key}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
         });
+      let r = await tryModel(HF_DONUT);
+      if (!r.ok) {
+        const t = await r.text();
+        r = await tryModel(HF_FALLBACK);
+        if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
+      }
+      data = await r.json();
     }
-
-    const base64 = file.buffer.toString("base64");
-    const dataUri = `data:${file.mimetype};base64,${base64}`;
-
-    const payload = {
-      inputs: {
-        question:
-          "Extract all test names and values as a JSON object with keys as short test names and values with units.",
-        image: dataUri,
-      },
-      parameters: {
-        return_full_text: false,
-      },
-    };
-
-    const hfRes = await fetch(HF_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${key}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!hfRes.ok) {
-      const t = await hfRes.text();
-      return res.status(502).json({ error: "HuggingFace error", details: t });
-    }
-    const data = await hfRes.json();
     const parsed = parseDonutOutput(data);
     if (!parsed)
       return res
