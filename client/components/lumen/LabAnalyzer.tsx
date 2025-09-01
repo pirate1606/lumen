@@ -31,24 +31,22 @@ export default function LabAnalyzer() {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await fetch("/api/lab/analyze", { method: "POST", body: fd });
-      const clone = res.clone();
-      let text: string;
+      const res = await fetch("/api/lab/analyze", {
+        method: "POST",
+        body: fd,
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+      });
+      let json: AnalyzeResponse | null = null;
       try {
-        text = await clone.text();
-      } catch (e: any) {
-        text = e?.message || "";
-      }
-      let json: AnalyzeResponse;
-      try {
-        json = JSON.parse(text);
+        json = (await res.json()) as AnalyzeResponse;
       } catch {
-        json = { error: "Unexpected response", details: text } as AnalyzeResponse;
+        json = null;
       }
       if (!res.ok) {
-        setErr(json.error || json.details || "Upload failed");
+        setErr(json?.error || json?.details || `Upload failed (HTTP ${res.status})`);
       } else {
-        setData(json);
+        setData(json || { error: "Empty response" });
       }
     } catch (e: any) {
       setErr(e?.message || String(e));
