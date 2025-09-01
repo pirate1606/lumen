@@ -5,6 +5,7 @@ A modern, multilingual, AI‑powered healthcare assistant designed for India. LU
 > Disclaimer: LUMEN is a research prototype and does not replace professional medical advice.
 
 ## Table of Contents
+
 - [Problem Statement](#problem-statement)
 - [Proposed Solution](#proposed-solution)
   - [Normal Features](#normal-features)
@@ -30,9 +31,11 @@ A modern, multilingual, AI‑powered healthcare assistant designed for India. LU
 ---
 
 ## Problem Statement
+
 A significant portion of India’s population, especially in rural and semi‑urban areas, lacks timely access to qualified medical care, suffers preventable morbidity and mortality due to inadequate triage knowledge, and faces high costs and radiation exposure from repeated CT scans.
 
 Key facts:
+
 - ~900M rural residents (~65% of population) face poor healthcare access with 16% fewer PHCs and 50% fewer CHCs than prescribed standards. [DocBox]
 - PHC staffing gaps (2015): >8% lacked doctors, 38% lacked lab technicians, 22% had no pharmacists; specialist vacancies at CHCs ranged 76–83%. [Ballard] [BriefPMC]
 - Doctor/nurse/midwife density is 20.6 per 10,000 vs WHO recommendation 44.5 per 10,000. [BioMed] [CentralAxios]
@@ -42,9 +45,11 @@ Key facts:
 These gaps cause unnecessary deaths, inefficient referrals, repeated costly imaging (and radiation), and low awareness of government entitlements.
 
 ## Proposed Solution
+
 LUMEN: a multilingual, voice‑first, AI assistant tailored for India, integrating high‑impact modules to bridge access, knowledge, and diagnostics.
 
 ### Normal Features
+
 1. Symptoms‑Based Diagnosis & Guidance
    - Accepts multimodal inputs (text/audio/image).
    - Probable diagnosis with severity categorization (Green/Yellow/Red).
@@ -57,6 +62,7 @@ LUMEN: a multilingual, voice‑first, AI assistant tailored for India, integrati
    - Whisper for ASR; GPT for natural, empathetic explanations.
 
 ### Unique Differentiators (Student Innovation)
+
 1. PEARL Integration — Personalized Estimated Anatomic Reconstruction & Lifecare
    - Hybrid CT pipeline: geometry‑aware modeling (PerX2CT) → diffusion refinement (XctDiff) → NeRF detail polishing (SAX‑NeRF).
    - Generates estimated CT volumes with voxel‑level uncertainty to enable safer, lower‑dose follow‑up imaging.
@@ -71,6 +77,7 @@ LUMEN: a multilingual, voice‑first, AI assistant tailored for India, integrati
    - 3‑step pictorials + audio playback in the chosen language.
 
 ## Role of OpenAI Tools
+
 - Whisper: Multilingual ASR for symptoms and emergency commands.
 - GPT (chat models):
   - Empathetic triage guidance and emergency instructions.
@@ -80,6 +87,7 @@ LUMEN: a multilingual, voice‑first, AI assistant tailored for India, integrati
 - Optional DALL·E: Contextually appropriate visuals for education.
 
 ## System Architecture
+
 This repo ships a production‑ready React + Express monorepo with shared types.
 
 - Frontend: React 18, Vite, TailwindCSS, framer‑motion, R3F demo previews.
@@ -90,48 +98,60 @@ This repo ships a production‑ready React + Express monorepo with shared types.
 - Privacy: CT models can run on device/edge where feasible; PHI never logged.
 
 Data flow (high level):
-1) User input (text/audio/image) → 2) Pre‑processing (ASR/OCR) → 3) Retrieval (Embeddings + KB) → 4) GPT reasoning (guard‑railed) → 5) Structured outputs (triage, steps, eligibility) → 6) UI rendering with urgency badges and educational visuals.
+
+1. User input (text/audio/image) → 2) Pre‑processing (ASR/OCR) → 3) Retrieval (Embeddings + KB) → 4) GPT reasoning (guard‑railed) → 5) Structured outputs (triage, steps, eligibility) → 6) UI rendering with urgency badges and educational visuals.
 
 ## How It Works
+
 1. User Input (text/audio/image, language selection)
 2. AI Processing (Whisper → retrieval‑augmented GPT → module logic)
 3. Clear Outputs (diagnosis, severity, steps, visuals, links)
 4. User Action (self‑care, clinic, emergency, benefits enrollment)
 
 ## Module Details
+
 ### Symptoms‑Based Diagnosis & Guidance
+
 - Severity tiers: Green (self‑care), Yellow (clinic), Red (emergency).
 - Outputs include do/don’t lists, local language voice prompts, and follow‑up timing.
 
 ### AI Specialist Modules
+
 - Tabs for Dermatology, Radiology, Cardiology; extensible registry for more modules.
 - Dual output: layperson narrative + clinician summary.
 
 ### PEARL CT Reconstruction
+
 - Pipeline: PerX2CT (geometry) → XctDiff (denoising/refinement) → SAX‑NeRF (detail polish).
 - Exposes uncertainty maps and dose‑reduction configuration for follow‑up studies.
 
 ### Lab Report Analyzer & Follow‑Up Generator
+
 - Field extraction, reference range comparison, abnormality ranking.
 - Recommendations aligned to reputable guidelines; configurable locality and diet preferences.
 
 ### Government Schemes & Benefits Assistant
+
 - Retrieval over central/state scheme corpus; eligibility/steps generation; helplines and docs.
 
 ### Preliminary Triage & Emergency Education
+
 - Scenario tiles (snakebite, drowning, burns, electric shock) → 3‑step pictorial + audio.
 
 ## Impact
+
 - Reduce delay‑related deaths (e.g., snakebite) via immediate, correct first aid.
 - Serve ~900M rural Indians with multilingual guidance and benefits awareness.
 - Lower unnecessary imaging and radiation via PEARL’s uncertainty‑aware reconstructions.
 
 ## Ethical Design & Safety
+
 - Privacy by design; on‑device/edge inference where possible.
 - Retrieval‑grounded answers; conservative escalation; transparent uncertainty.
 - Clear disclaimers and escalation triggers; no replacement for clinicians.
 
 ## Local Development
+
 Requirements: Node 18+, pnpm.
 
 ```bash
@@ -144,6 +164,7 @@ pnpm typecheck    # tsc
 ```
 
 Environment variables (example — keep secrets server‑side):
+
 ```
 # .env (not committed)
 OPENAI_API_KEY=...
@@ -151,15 +172,19 @@ VECTOR_DB_URL=...
 ```
 
 ## Testing & Type Safety
+
 - Vitest for unit tests (`pnpm test`).
 - Shared types in `shared/` to keep client/server/API aligned.
 
 ## Deploying
+
 Recommended: Netlify or Vercel.
+
 - Netlify: Builds from source; set environment variables in the dashboard; use serverless functions (see `netlify/functions/`).
 - Vercel: Configure project; environment variables in dashboard; serverless/edge functions as needed.
 
 ## Folder Structure
+
 ```
 client/         # React SPA (pages, components, UI)
 server/         # Express API (integrated with Vite)
@@ -168,6 +193,7 @@ public/         # Static assets (favicon, etc.)
 ```
 
 ## References (IEEE‑style)
+
 [1] “Healthcare Access in Rural Communities in India,” Ballard Brief, 18‑Dec‑2024. (Ballard Brief)
 [2] A. P. Ugargol et al., “In search of a fix to the primary health care chasm in India,” 2023. (PMC)
 [3] A. Nair et al., “Workforce problems at rural public health‑centres in India,” Human Resources for Health, vol. 19, Art. 147, 2022. (BioMed Central)
