@@ -19,8 +19,12 @@ const NotFound = () => {
       <main className="grid place-items-center py-40">
         <div className="text-center card p-8">
           <h1 className="text-4xl font-bold mb-2">404</h1>
-          <p className="text-lg text-muted-foreground mb-4">Oops! Page not found</p>
-          <a href="/" className="btn-cta">Return to Home</a>
+          <p className="text-lg text-muted-foreground mb-4">
+            Oops! Page not found
+          </p>
+          <a href="/" className="btn-cta">
+            Return to Home
+          </a>
         </div>
       </main>
       <Footer />

@@ -14,7 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "Roboto", "Open Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: [
+          "Inter",
+          "Roboto",
+          "Open Sans",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -117,7 +124,8 @@ export default {
         wave: "wave 20s linear infinite",
       },
       boxShadow: {
-        smooth: "0 10px 25px -5px rgba(16,24,40,0.08), 0 8px 10px -6px rgba(16,24,40,0.05)",
+        smooth:
+          "0 10px 25px -5px rgba(16,24,40,0.08), 0 8px 10px -6px rgba(16,24,40,0.05)",
         glow: "0 0 0 3px hsla(var(--brand-cta),0.35), 0 6px 20px hsla(var(--brand-cta),0.35)",
       },
     },

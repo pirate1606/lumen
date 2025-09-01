@@ -19,9 +19,12 @@ export default function Solution() {
   return (
     <section id="solution" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">One Unified AI Healthcare Companion</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center">
+          One Unified AI Healthcare Companion
+        </h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          LUMEN integrates triage, diagnostics, CT reconstruction, lab analysis, and health schemes — built for India.
+          LUMEN integrates triage, diagnostics, CT reconstruction, lab analysis,
+          and health schemes — built for India.
         </p>
 
         <div className="mt-10 grid lg:grid-cols-2 gap-8">

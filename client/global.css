@@ -23,10 +23,10 @@
     --popover-foreground: 217 33% 15%;
 
     /* Brand palette: blue/green medical + orange CTAs */
-    --brand-blue: 206 82% 45%;        /* Medical blue */
-    --brand-teal: 164 72% 40%;        /* Healthcare teal */
-    --brand-sea: 190 65% 88%;         /* Soft sea background accents */
-    --brand-cta: 28 95% 52%;          /* Vibrant orange for CTAs */
+    --brand-blue: 206 82% 45%; /* Medical blue */
+    --brand-teal: 164 72% 40%; /* Healthcare teal */
+    --brand-sea: 190 65% 88%; /* Soft sea background accents */
+    --brand-cta: 28 95% 52%; /* Vibrant orange for CTAs */
     --brand-cta-foreground: 0 0% 100%;
 
     --primary: var(--brand-blue);
@@ -106,9 +106,15 @@
 }
 
 @layer base {
-  * { @apply border-border; }
-  html { scroll-behavior: smooth; }
-  body { @apply bg-background text-foreground antialiased font-sans; }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
 }
 
 @layer components {
@@ -119,15 +125,37 @@
     @apply rounded-2xl bg-card/80 backdrop-blur shadow-smooth border border-border;
   }
   .gradient-orb {
-    background: radial-gradient(ellipse at 30% 30%, hsla(var(--brand-teal),0.45), transparent 45%),
-                radial-gradient(ellipse at 70% 70%, hsla(var(--brand-blue),0.45), transparent 40%),
-                radial-gradient(ellipse at 50% 50%, hsla(var(--brand-teal),0.25), transparent 50%);
-    filter: drop-shadow(0 12px 30px hsla(var(--brand-blue),0.35));
+    background:
+      radial-gradient(
+        ellipse at 30% 30%,
+        hsla(var(--brand-teal), 0.45),
+        transparent 45%
+      ),
+      radial-gradient(
+        ellipse at 70% 70%,
+        hsla(var(--brand-blue), 0.45),
+        transparent 40%
+      ),
+      radial-gradient(
+        ellipse at 50% 50%,
+        hsla(var(--brand-teal), 0.25),
+        transparent 50%
+      );
+    filter: drop-shadow(0 12px 30px hsla(var(--brand-blue), 0.35));
   }
   .wave-bg {
-    background: linear-gradient(90deg, hsla(var(--brand-sea),0.4), transparent 30%),
-                radial-gradient(1200px 400px at 10% 10%, hsla(var(--brand-blue),0.10), transparent 60%),
-                radial-gradient(800px 300px at 90% 20%, hsla(var(--brand-teal),0.12), transparent 60%);
+    background:
+      linear-gradient(90deg, hsla(var(--brand-sea), 0.4), transparent 30%),
+      radial-gradient(
+        1200px 400px at 10% 10%,
+        hsla(var(--brand-blue), 0.1),
+        transparent 60%
+      ),
+      radial-gradient(
+        800px 300px at 90% 20%,
+        hsla(var(--brand-teal), 0.12),
+        transparent 60%
+      );
     mask: linear-gradient(to bottom, black 60%, transparent 100%);
   }
 }

@@ -13,7 +13,8 @@ const stats = [
     suffix: "/10k",
   },
   {
-    label: "Snakebites cause 58,000 deaths annually, mostly preventable with first aid.",
+    label:
+      "Snakebites cause 58,000 deaths annually, mostly preventable with first aid.",
     value: 58000,
     suffix: "",
   },
@@ -28,7 +29,8 @@ export default function Problem() {
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold">The Problem</h2>
             <p className="mt-3 text-muted-foreground max-w-prose">
-              Critical healthcare gaps create avoidable risk. Access, expertise, and timely guidance are uneven—especially outside urban centers.
+              Critical healthcare gaps create avoidable risk. Access, expertise,
+              and timely guidance are uneven—especially outside urban centers.
             </p>
           </div>
           <div className="relative">
@@ -48,14 +50,18 @@ export default function Problem() {
                     transition={{ type: "spring", stiffness: 120 }}
                     className="text-4xl font-extrabold text-brand-blue"
                   >
-                    {s.value.toLocaleString()}<span className="text-2xl align-super">{s.suffix}</span>
+                    {s.value.toLocaleString()}
+                    <span className="text-2xl align-super">{s.suffix}</span>
                   </motion.div>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {s.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              Visual: AI-generated illustration showing the village–hospital gap.
+              Visual: AI-generated illustration showing the village–hospital
+              gap.
             </p>
           </div>
         </div>

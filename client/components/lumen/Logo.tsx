@@ -23,13 +23,16 @@ export default function Logo({ size = 28, withWordmark = true }: Props) {
         <circle cx="218" cy="208" r="70" fill="#fff" opacity="0.18" />
       </svg>
       {withWordmark && (
-        <span className="text-xl font-extrabold tracking-wider" style={{
-          backgroundImage:
-            "linear-gradient(90deg, hsl(var(--brand-teal)) 0%, hsl(var(--brand-blue)) 60%, hsl(var(--brand-teal)) 100%)",
-          WebkitBackgroundClip: "text",
-          backgroundClip: "text",
-          color: "transparent",
-        }}>
+        <span
+          className="text-xl font-extrabold tracking-wider"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, hsl(var(--brand-teal)) 0%, hsl(var(--brand-blue)) 60%, hsl(var(--brand-teal)) 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
           LUMEN
         </span>
       )}

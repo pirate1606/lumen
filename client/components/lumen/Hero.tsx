@@ -23,11 +23,19 @@ export default function Hero() {
               LUMEN — Smarter, Safer, Accessible Healthcare for Everyday India
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              AI-powered triage, lab analysis, CT reconstruction, and healthcare guidance — in your language.
+              AI-powered triage, lab analysis, CT reconstruction, and healthcare
+              guidance — in your language.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#demo" className="btn-cta">Try LUMEN</a>
-              <a href="#about" className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent">Learn More</a>
+              <a href="#demo" className="btn-cta">
+                Try LUMEN
+              </a>
+              <a
+                href="#about"
+                className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
+              >
+                Learn More
+              </a>
             </div>
           </motion.div>
 
@@ -48,7 +56,8 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Animated gradient waves and floating medical icons bring the brand to life.
+                  Animated gradient waves and floating medical icons bring the
+                  brand to life.
                 </p>
               </div>
             </div>

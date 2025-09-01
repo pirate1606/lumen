@@ -15,12 +15,19 @@ export default function HowItWorks() {
   return (
     <section id="how" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">How it Works</h2>
-        <p className="mt-2 text-center text-muted-foreground">Interactive timeline highlights as you scroll.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center">
+          How it Works
+        </h2>
+        <p className="mt-2 text-center text-muted-foreground">
+          Interactive timeline highlights as you scroll.
+        </p>
 
         <div className="mt-10 relative">
           <div className="h-1 bg-secondary rounded-full" />
-          <motion.div style={{ x }} className="absolute left-0 top-0 h-1 w-1/4 bg-cta rounded-full origin-left" />
+          <motion.div
+            style={{ x }}
+            className="absolute left-0 top-0 h-1 w-1/4 bg-cta rounded-full origin-left"
+          />
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((s, i) => (
