@@ -34,6 +34,12 @@ export default function Navbar() {
                 Demo
               </a>
               <a
+                href="#technical"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                Technical
+              </a>
+              <a
                 href="#contact"
                 className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
               >
