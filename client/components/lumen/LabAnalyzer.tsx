@@ -32,9 +32,15 @@ export default function LabAnalyzer() {
       const fd = new FormData();
       fd.append("file", file);
       const res = await fetch("/api/lab/analyze", { method: "POST", body: fd });
-      const json: AnalyzeResponse = await res.json();
+      const text = await res.text();
+      let json: AnalyzeResponse;
+      try {
+        json = JSON.parse(text);
+      } catch {
+        json = { error: "Unexpected response", details: text } as AnalyzeResponse;
+      }
       if (!res.ok) {
-        setErr(json.error || "Upload failed");
+        setErr(json.error || json.details || "Upload failed");
       } else {
         setData(json);
       }
