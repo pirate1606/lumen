@@ -27,10 +27,10 @@ export default function Technical() {
         <div className="mt-10 grid lg:grid-cols-2 gap-6">
           <Card title="Problem Statement">
             <p>
-              India faces uneven access to timely, quality healthcare. Rural populations (~65%) have limited primary and specialist care, doctor density is ~20.6 per 10,000 versus WHOs 44.5 benchmark, and preventable emergencies (e.g., ~58,000 snakebite deaths annually) persist due to delayed triage and guidance.
+              India faces uneven access to timely, quality healthcare. Rural populations (~65%) have limited primary and specialist care, doctor density is ~20.6 per 10,000 versus WHO's 44.5 benchmark, and preventable emergencies (e.g., ~58,000 snakebite deaths annually) persist due to delayed triage and guidance.
             </p>
             <p>
-              LUMEN addresses this with a unified assistant that triages symptoms, explains diagnostics, reconstructs low-dose CT, interprets lab reports, and maps people to government schemesin their language.
+              LUMEN addresses this with a unified assistant that triages symptoms, explains diagnostics, reconstructs low-dose CT, interprets lab reports, and maps people to government schemes—in their language.
             </p>
           </Card>
 
@@ -81,7 +81,7 @@ export default function Technical() {
               <div>
                 <div className="font-medium flex items-center gap-2"><Cpu className="text-brand-blue" /> CT Reconstruction (PEARL-inspired)</div>
                 <ol className="list-decimal pl-5 space-y-1 mt-1">
-                  <li>Upload DICOM series  pre-processing (denoise, normalize).</li>
+                  <li>Upload DICOM series — pre-processing (denoise, normalize).</li>
                   <li>Low-dose reconstruction engine produces enhanced slices/volume.</li>
                   <li>Viewer renders 3D/axial previews and exports summaries.</li>
                   <li>Safety guardrails ensure non-diagnostic disclaimer and dose notes.</li>
@@ -113,7 +113,7 @@ export default function Technical() {
           <Card title="OpenAI Usage & Costing (illustrative)">
             <div className="space-y-2">
               <p>
-                Models: GPT for reasoning/chat, Vision for image inputs, TTS for audio, and Embeddings for retrieval. Pricing changes over timealways verify on OpenAIs pricing page before deployment.
+                Models: GPT for reasoning/chat, Vision for image inputs, TTS for audio, and Embeddings for retrieval. Pricing changes over time—always verify on OpenAIs pricing page before deployment.
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Chat reasoning: choose fast/light models for triage; fall back to higher-context when needed.</li>
@@ -122,7 +122,7 @@ export default function Technical() {
                 <li>Embeddings: for healthcare leaflets and scheme FAQs.</li>
               </ul>
               <div className="rounded-lg bg-secondary p-3 text-xs">
-                Example monthly estimate (prototype scale): 5k chats (light model), 500 vision calls, 2k TTS minutes, 50k embed tokens  check live pricing to compute exact cost and caps.
+                Example monthly estimate (prototype scale): 5k chats (light model), 500 vision calls, 2k TTS minutes, 50k embed tokens — check live pricing to compute exact cost and caps.
               </div>
             </div>
           </Card>
@@ -140,7 +140,7 @@ export default function Technical() {
           <Card title="Team">
             <div className="flex items-center gap-2 text-foreground"><Users2 /> <span className="font-medium">Sanchit, Paras, Piryal, Kshitij</span></div>
             <p>Final-year B.Tech students, VIT Pune.</p>
-            <p>Project under OpenAI   x NXTWave Buildathon.</p>
+            <p>Project under OpenAI × NXTWave Buildathon.</p>
           </Card>
           <Card title="Attribution & Disclaimer">
             <p>
