@@ -20,5 +20,8 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // Lab analyzer
+  app.post("/api/lab/analyze", labUploadMiddleware, handleLabAnalyze);
+
   return app;
 }
