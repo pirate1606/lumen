@@ -91,8 +91,8 @@ export async function handleLabAnalyze(req: Request, res: Response) {
         return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.` });
       }
       const binary = file.buffer;
-      const tryModel = (url: string) =>
-        fetch(url, {
+      const tryModel = async (url: string) => {
+        const resp = await fetch(url, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${key}`,
@@ -101,22 +101,39 @@ export async function handleLabAnalyze(req: Request, res: Response) {
           },
           body: binary,
         });
+        const text = await resp.text();
+        return { ok: resp.ok, status: resp.status, text, url };
+      };
       // Retry up to 3 times (cold starts) and fallback model
-      let r = await tryModel(HF_DONUT);
-      if (!r.ok) {
-        const t = await r.text();
-        r = await tryModel(HF_FALLBACK);
-        if (!r.ok) {
-          // small backoff retries
+      const attempts: any[] = [];
+      let result = await tryModel(HF_DONUT); attempts.push(result);
+      if (!result.ok) {
+        const fb = await tryModel(HF_FALLBACK); attempts.push(fb);
+        if (!fb.ok) {
           for (let i = 0; i < 2; i++) {
             await new Promise((resDelay) => setTimeout(resDelay, 1500 * (i + 1)));
-            r = await tryModel(HF_DONUT);
-            if (r.ok) break;
+            const r2 = await tryModel(HF_DONUT); attempts.push(r2);
+            if (r2.ok) { result = r2; break; }
           }
-          if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
+          if (!result.ok && !fb.ok) {
+            // connectivity tiny test
+            const tiny = await tryModel("hf-internal-testing/tiny-random-donut");
+            attempts.push(tiny);
+            return res.status(502).json({
+              error: "HuggingFace error",
+              details: attempts.map(a => ({ url: a.url, status: a.status, body: a.text?.slice(0,200) })).slice(-3),
+              hint: "If all show 404/Not Found, the model endpoints may be unavailable or blocked. Try again later or provide a smaller image.",
+            });
+          }
+        } else {
+          result = fb;
         }
       }
-      data = await r.json();
+      try {
+        data = JSON.parse(result.text);
+      } catch {
+        return res.status(502).json({ error: "HuggingFace error", details: result.text?.slice(0,500) });
+      }
     }
     const parsed = parseDonutOutput(data);
     if (!parsed)
