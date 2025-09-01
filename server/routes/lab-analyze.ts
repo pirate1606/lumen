@@ -82,8 +82,16 @@ export async function handleLabAnalyze(req: Request, res: Response) {
     let data: any;
 
     if (file.mimetype === "application/pdf") {
-      // Send PDF binary to models; Donut first, then fallback
-      const tryModel = async (url: string) =>
+      return res.status(415).json({
+        error: "PDF not supported in prototype",
+        details: "Convert PDF → PNG/JPEG (≤5MB) and upload the image.",
+      });
+    } else {
+      if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
+        return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.` });
+      }
+      const binary = file.buffer;
+      const tryModel = (url: string) =>
         fetch(url, {
           method: "POST",
           headers: {
@@ -91,44 +99,22 @@ export async function handleLabAnalyze(req: Request, res: Response) {
             "Content-Type": file.mimetype,
             Accept: "application/json",
           },
-          body: file.buffer,
+          body: binary,
         });
-
+      // Retry up to 3 times (cold starts) and fallback model
       let r = await tryModel(HF_DONUT);
       if (!r.ok) {
         const t = await r.text();
         r = await tryModel(HF_FALLBACK);
-        if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
-      }
-      data = await r.json();
-    } else {
-      if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
-        return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.` });
-      }
-      const base64 = file.buffer.toString("base64");
-      const dataUri = `data:${file.mimetype};base64,${base64}`;
-      const payload = {
-        inputs: {
-          question: "Extract all test names and values as a JSON object with keys as short test names and values with units.",
-          image: dataUri,
-        },
-        parameters: { return_full_text: false },
-      };
-      const tryModel = async (url: string) =>
-        fetch(url, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${key}`,
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-      let r = await tryModel(HF_DONUT);
-      if (!r.ok) {
-        const t = await r.text();
-        r = await tryModel(HF_FALLBACK);
-        if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
+        if (!r.ok) {
+          // small backoff retries
+          for (let i = 0; i < 2; i++) {
+            await new Promise((resDelay) => setTimeout(resDelay, 1500 * (i + 1)));
+            r = await tryModel(HF_DONUT);
+            if (r.ok) break;
+          }
+          if (!r.ok) return res.status(502).json({ error: "HuggingFace error", details: t });
+        }
       }
       data = await r.json();
     }
