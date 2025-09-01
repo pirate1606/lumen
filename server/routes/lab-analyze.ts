@@ -65,13 +65,35 @@ export async function handleLabAnalyze(req: Request, res: Response) {
     const file = (req as any).file as Express.Multer.File | undefined;
     if (!file) return res.status(400).json({ error: "Missing file field 'file'" });
 
+    if (file.mimetype === "application/pdf") {
+      return res.status(415).json({ error: "Unsupported file type for prototype", details: "Please upload a PNG or JPEG image of the lab report for now." });
+    }
+
+    if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
+      return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG or JPEG.` });
+    }
+
+    const base64 = file.buffer.toString("base64");
+    const dataUri = `data:${file.mimetype};base64,${base64}`;
+
+    const payload = {
+      inputs: {
+        question: "Extract all test names and values as a JSON object with keys as short test names and values with units.",
+        image: dataUri,
+      },
+      parameters: {
+        return_full_text: false,
+      },
+    };
+
     const hfRes = await fetch(HF_URL, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${key}`,
-        "Content-Type": file.mimetype || "application/octet-stream",
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: file.buffer,
+      body: JSON.stringify(payload),
     });
 
     if (!hfRes.ok) {
