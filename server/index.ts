@@ -23,6 +23,12 @@ export function createServer() {
 
   // Lab analyzer
   app.post("/api/lab/analyze", labUploadMiddleware, handleLabAnalyze);
+  // Chat (symptom-based diagnosis text)
+  app.post("/api/chat/symptoms", handleSymptomsChat);
+  // Vision (image-based analysis)
+  app.post("/api/vision/analyze", imageUpload, handleVisionAnalyze);
+  // Embeddings (for scheme retrieval)
+  app.post("/api/embed", handleEmbed);
 
   return app;
 }
