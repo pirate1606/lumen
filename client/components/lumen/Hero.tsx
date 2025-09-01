@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { HeartPulse, Stethoscope, Dna } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -27,15 +28,15 @@ export default function Hero() {
               guidance — in your language.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#demo" className="btn-cta">
+              <Link to="/#demo" className="btn-cta">
                 Try LUMEN
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                to="/#about"
                 className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </motion.div>
 
