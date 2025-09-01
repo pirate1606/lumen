@@ -35,6 +35,12 @@ export default function Navbar() {
                 Demo
               </Link>
               <Link
+                to="/ai-tools"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                AI Tools
+              </Link>
+              <Link
                 to="/technical"
                 className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
               >

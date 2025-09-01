@@ -1,0 +1,55 @@
+# LUMEN Backend Requirements - Hugging Face Models & Dependencies
+# Python 3.9+ required
+
+# Core ML/AI Libraries
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+accelerate>=0.24.0
+sentence-transformers>=2.2.2
+
+# Audio Processing (for Whisper ASR)
+librosa>=0.10.0
+soundfile>=0.12.0
+ffmpeg-python>=0.2.0
+
+# Image Processing (for OCR and Vision)
+Pillow>=10.0.0
+opencv-python>=4.8.0
+pytesseract>=0.3.10
+
+# Document Processing
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+openpyxl>=3.1.0
+
+# Vector Database & Embeddings
+faiss-cpu>=1.7.4
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Web Framework & API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+aiofiles>=23.2.0
+pydantic>=2.5.0
+
+# Development & Testing
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.7.0
+
+# Missing Dependencies for Model Loading
+protobuf>=4.21.0
+tokenizers>=0.15.0
+huggingface-hub>=0.19.0
+
+# Optional: GPU Support (uncomment if using CUDA)
+# torch[cu118]>=2.0.0
+# faiss-gpu>=1.7.4

@@ -1,0 +1,24 @@
+# LUMEN Backend Environment Configuration
+# Copy this file to .env and fill in your values
+
+# HuggingFace API Key (optional but recommended)
+# Get from: https://huggingface.co/settings/tokens
+HF_API_KEY=your_huggingface_api_key_here
+
+# Model Overrides (optional - uses defaults if not set)
+CHATBOT_MODEL=microsoft/DialoGPT-medium
+WHISPER_MODEL=openai/whisper-small
+XTTS_MODEL=facebook/fastspeech2-en-ljspeech
+DONUT_MODEL=naver-clova-ix/donut-base-finetuned-cord-v2
+BLIP_MODEL=Salesforce/blip-image-captioning-base
+EMBEDDING_MODEL=sentence-transformers/all-mpnet-base-v2
+MULTILINGUAL_EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=8000
+DEBUG=false
+
+# Vector Database
+VECTOR_DB_PATH=./data/vector_db
+UPLOAD_PATH=./data/uploads
