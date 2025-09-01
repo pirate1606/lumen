@@ -53,19 +53,25 @@ export default function Technical() {
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
           <Card title="System Architecture (WIP)">
             <div className="space-y-3">
-              <p>High-level diagram exported from Eraser.</p>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F386c959d2e0945409ec9e98dd27c0526?format=webp&width=1200"
-                alt="LUMEN system architecture (Eraser export)"
-                className="rounded-xl border"
-                loading="lazy"
-              />
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F4f9ef3ba46934b92935a7f7fbac88080?format=webp&width=1200"
-                alt="LUMEN system architecture zoomed blocks (Eraser export)"
-                className="rounded-xl border"
-                loading="lazy"
-              />
+              <p>High-level diagram exported from Eraser. Use the controls to zoom and pan.</p>
+              <Tabs defaultValue="d1" className="w-full">
+                <TabsList className="bg-secondary rounded-lg p-1">
+                  <TabsTrigger value="d1" className="rounded-md data-[state=active]:bg-white data-[state=active]:shadow">Diagram 1</TabsTrigger>
+                  <TabsTrigger value="d2" className="rounded-md data-[state=active]:bg-white data-[state=active]:shadow">Diagram 2</TabsTrigger>
+                </TabsList>
+                <TabsContent value="d1" className="mt-3">
+                  <ZoomableImage
+                    src="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F386c959d2e0945409ec9e98dd27c0526?format=webp&width=2000"
+                    alt="LUMEN system architecture (Eraser export)"
+                  />
+                </TabsContent>
+                <TabsContent value="d2" className="mt-3">
+                  <ZoomableImage
+                    src="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F4f9ef3ba46934b92935a7f7fbac88080?format=webp&width=2000"
+                    alt="LUMEN system architecture zoomed blocks (Eraser export)"
+                  />
+                </TabsContent>
+              </Tabs>
               <p className="text-xs">Diagrams are conceptual and not final; implementation may evolve.</p>
             </div>
           </Card>
