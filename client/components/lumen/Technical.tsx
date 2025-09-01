@@ -1,6 +1,9 @@
 import React from "react";
 import { BookOpen, Cpu, Shield, Workflow, Users2, Link2 } from "lucide-react";
 
+import ZoomableImage from "./ZoomableImage";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="card p-6">
