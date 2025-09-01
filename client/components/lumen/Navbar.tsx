@@ -17,23 +17,23 @@ export default function Navbar() {
             </Link>
             <div className="hidden md:flex items-center gap-2">
               <Link
-              to="/#features"
-              className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-            >
-              Features
-            </Link>
+                to="/#features"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                Features
+              </Link>
               <Link
-              to="/#how"
-              className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-            >
-              How it works
-            </Link>
+                to="/#how"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                How it works
+              </Link>
               <Link
-              to="/#demo"
-              className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-            >
-              Demo
-            </Link>
+                to="/#demo"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                Demo
+              </Link>
               <Link
                 to="/technical"
                 className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
@@ -41,11 +41,11 @@ export default function Navbar() {
                 Technical
               </Link>
               <Link
-              to="/#contact"
-              className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-            >
-              Contact
-            </Link>
+                to="/#contact"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                Contact
+              </Link>
             </div>
             <div className="flex items-center gap-2">
               <Link to="/#demo" className="btn-cta">

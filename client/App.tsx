@@ -17,15 +17,16 @@ function ScrollToHash() {
   const { pathname, hash } = useLocation();
   React.useEffect(() => {
     if (hash) {
-      const id = hash.replace('#', '');
+      const id = hash.replace("#", "");
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else setTimeout(() => {
-        const el2 = document.getElementById(id);
-        if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else
+        setTimeout(() => {
+          const el2 = document.getElementById(id);
+          if (el2) el2.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 60);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [pathname, hash]);
   return null;
