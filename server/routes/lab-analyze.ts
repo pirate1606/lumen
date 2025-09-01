@@ -76,8 +76,10 @@ export async function handleLabAnalyze(req: Request, res: Response) {
     if (!file)
       return res.status(400).json({ error: "Missing file field 'file'" });
 
-    const HF_DONUT = "https://api-inference.huggingface.co/models/naver-clova-ix/donut-base-finetuned-docvqa";
-    const HF_FALLBACK = "https://api-inference.huggingface.co/models/impira/layoutlm-document-qa";
+    const HF_DONUT =
+      "https://api-inference.huggingface.co/models/naver-clova-ix/donut-base-finetuned-docvqa";
+    const HF_FALLBACK =
+      "https://api-inference.huggingface.co/models/impira/layoutlm-document-qa";
 
     let data: any;
 
@@ -88,7 +90,12 @@ export async function handleLabAnalyze(req: Request, res: Response) {
       });
     } else {
       if (!/^image\/(png|jpe?g)$/i.test(file.mimetype || "")) {
-        return res.status(415).json({ error: "Unsupported file type", details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.` });
+        return res
+          .status(415)
+          .json({
+            error: "Unsupported file type",
+            details: `Received ${file.mimetype}. Allowed: PNG, JPEG, or PDF.`,
+          });
       }
       const binary = file.buffer;
       const tryModel = async (url: string) => {
@@ -106,22 +113,38 @@ export async function handleLabAnalyze(req: Request, res: Response) {
       };
       // Retry up to 3 times (cold starts) and fallback model
       const attempts: any[] = [];
-      let result = await tryModel(HF_DONUT); attempts.push(result);
+      let result = await tryModel(HF_DONUT);
+      attempts.push(result);
       if (!result.ok) {
-        const fb = await tryModel(HF_FALLBACK); attempts.push(fb);
+        const fb = await tryModel(HF_FALLBACK);
+        attempts.push(fb);
         if (!fb.ok) {
           for (let i = 0; i < 2; i++) {
-            await new Promise((resDelay) => setTimeout(resDelay, 1500 * (i + 1)));
-            const r2 = await tryModel(HF_DONUT); attempts.push(r2);
-            if (r2.ok) { result = r2; break; }
+            await new Promise((resDelay) =>
+              setTimeout(resDelay, 1500 * (i + 1)),
+            );
+            const r2 = await tryModel(HF_DONUT);
+            attempts.push(r2);
+            if (r2.ok) {
+              result = r2;
+              break;
+            }
           }
           if (!result.ok && !fb.ok) {
             // connectivity tiny test
-            const tiny = await tryModel("hf-internal-testing/tiny-random-donut");
+            const tiny = await tryModel(
+              "hf-internal-testing/tiny-random-donut",
+            );
             attempts.push(tiny);
             return res.status(502).json({
               error: "HuggingFace error",
-              details: attempts.map(a => ({ url: a.url, status: a.status, body: a.text?.slice(0,200) })).slice(-3),
+              details: attempts
+                .map((a) => ({
+                  url: a.url,
+                  status: a.status,
+                  body: a.text?.slice(0, 200),
+                }))
+                .slice(-3),
               hint: "If all show 404/Not Found, the model endpoints may be unavailable or blocked. Try again later or provide a smaller image.",
             });
           }
@@ -132,7 +155,12 @@ export async function handleLabAnalyze(req: Request, res: Response) {
       try {
         data = JSON.parse(result.text);
       } catch {
-        return res.status(502).json({ error: "HuggingFace error", details: result.text?.slice(0,500) });
+        return res
+          .status(502)
+          .json({
+            error: "HuggingFace error",
+            details: result.text?.slice(0, 500),
+          });
       }
     }
     const parsed = parseDonutOutput(data);

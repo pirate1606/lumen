@@ -3,7 +3,12 @@ import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
 import { handleLabAnalyze, labUploadMiddleware } from "./routes/lab-analyze";
-import { handleSymptomsChat, handleVisionAnalyze, handleEmbed, imageUpload } from "./routes/hf";
+import {
+  handleSymptomsChat,
+  handleVisionAnalyze,
+  handleEmbed,
+  imageUpload,
+} from "./routes/hf";
 
 export function createServer() {
   const app = express();

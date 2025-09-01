@@ -76,10 +76,14 @@ export default function LabAnalyzer() {
             onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
           <span className="text-sm">
-            {file ? file.name : "Click to choose PNG/JPEG (convert PDF → PNG first)"}
+            {file
+              ? file.name
+              : "Click to choose PNG/JPEG (convert PDF → PNG first)"}
           </span>
         </label>
-        <p className="text-xs text-muted-foreground">Tip: keep files ≤5MB. If a 502 occurs, wait a few seconds and retry.</p>
+        <p className="text-xs text-muted-foreground">
+          Tip: keep files ≤5MB. If a 502 occurs, wait a few seconds and retry.
+        </p>
         <div className="flex gap-2">
           <button
             disabled={!file || loading}
