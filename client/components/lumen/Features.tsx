@@ -4,6 +4,7 @@ import { Mic, Image as ImageIcon, Upload, BadgeAlert } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import LabAnalyzer from "./LabAnalyzer";
 
 function RotatingCube() {
   return (
