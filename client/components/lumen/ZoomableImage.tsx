@@ -52,9 +52,24 @@ export default function ZoomableImage({ src, alt }: Props) {
   return (
     <div className="relative">
       <div className="absolute right-3 top-3 z-10 flex gap-2">
-        <button onClick={zoomOut} className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white">−</button>
-        <button onClick={zoomIn} className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white">+</button>
-        <button onClick={reset} className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white">Reset</button>
+        <button
+          onClick={zoomOut}
+          className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white"
+        >
+          −
+        </button>
+        <button
+          onClick={zoomIn}
+          className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white"
+        >
+          +
+        </button>
+        <button
+          onClick={reset}
+          className="px-2 py-1 rounded-md bg-white/80 shadow-sm border hover:bg-white"
+        >
+          Reset
+        </button>
       </div>
       <div
         ref={containerRef}
