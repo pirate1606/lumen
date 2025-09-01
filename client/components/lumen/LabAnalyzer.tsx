@@ -25,6 +25,14 @@ export default function LabAnalyzer() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) return;
+    if (!/^image\/(png|jpe?g)$/i.test(file.type)) {
+      setErr("Please upload a PNG or JPEG image (convert PDF to image first).");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setErr("File too large. Keep it under 5MB.");
+      return;
+    }
     setLoading(true);
     setErr(null);
     setData(null);
