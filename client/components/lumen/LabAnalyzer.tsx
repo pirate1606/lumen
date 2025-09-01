@@ -71,14 +71,15 @@ export default function LabAnalyzer() {
         <label className="mt-1 grid place-items-center h-40 rounded-xl border-2 border-dashed border-brand-blue/40 bg-secondary cursor-pointer">
           <input
             type="file"
-            accept="application/pdf,image/png,image/jpeg"
+            accept="image/png,image/jpeg,application/pdf"
             className="hidden"
             onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
           <span className="text-sm">
-            {file ? file.name : "Click to choose PDF/PNG/JPEG"}
+            {file ? file.name : "Click to choose PNG/JPEG (convert PDF → PNG first)"}
           </span>
         </label>
+        <p className="text-xs text-muted-foreground">Tip: keep files ≤5MB. If a 502 occurs, wait a few seconds and retry.</p>
         <div className="flex gap-2">
           <button
             disabled={!file || loading}
