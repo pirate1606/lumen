@@ -122,7 +122,7 @@ export default function Technical() {
           <Card title="OpenAI Usage & Costing (illustrative)">
             <div className="space-y-2">
               <p>
-                Models: GPT for reasoning/chat, Vision for image inputs, TTS for audio, and Embeddings for retrieval. Pricing changes over time—always verify on OpenAIs pricing page before deployment.
+                Models: GPT for reasoning/chat, Vision for image inputs, TTS for audio, and Embeddings for retrieval. Pricing changes over time—always verify on OpenAI’s pricing page before deployment.
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Chat reasoning: choose fast/light models for triage; fall back to higher-context when needed.</li>
