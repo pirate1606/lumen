@@ -32,7 +32,13 @@ export default function LabAnalyzer() {
       const fd = new FormData();
       fd.append("file", file);
       const res = await fetch("/api/lab/analyze", { method: "POST", body: fd });
-      const text = await res.text();
+      const clone = res.clone();
+      let text: string;
+      try {
+        text = await clone.text();
+      } catch (e: any) {
+        text = e?.message || "";
+      }
       let json: AnalyzeResponse;
       try {
         json = JSON.parse(text);
