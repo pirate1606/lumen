@@ -150,7 +150,11 @@ export default function Features() {
           <Card>
             <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
             <div className="mt-3">
-              <Suspense fallback={<div className="text-sm text-muted-foreground">Loading…</div>}>
+              <Suspense
+                fallback={
+                  <div className="text-sm text-muted-foreground">Loading…</div>
+                }
+              >
                 {/* Interactive upload calling backend */}
                 <LabAnalyzer />
               </Suspense>
