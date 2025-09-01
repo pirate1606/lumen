@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-label="LUMEN orb logo">
+  <defs>
+    <radialGradient id="g1" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#3FD1C1"/>
+      <stop offset="60%" stop-color="#1B8EE6"/>
+      <stop offset="100%" stop-color="#0a2a4b" stop-opacity="0.8"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="190" fill="url(#g1)" filter="url(#glow)"/>
+  <circle cx="220" cy="210" r="60" fill="#fff" opacity="0.18"/>
+</svg>
