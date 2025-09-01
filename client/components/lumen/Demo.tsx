@@ -43,11 +43,10 @@ export default function Demo() {
           </div>
 
           <div className="card p-6">
-            <h3 className="font-semibold">Lab Report Upload</h3>
-            <label className="mt-3 grid place-items-center h-48 rounded-xl border-2 border-dashed border-brand-blue/40 bg-secondary cursor-pointer">
-              <input type="file" className="hidden" />
-              <span>Click to choose a report</span>
-            </label>
+            <h3 className="font-semibold">Lab Report Analyzer</h3>
+            <div className="mt-3">
+              <LabAnalyzer />
+            </div>
           </div>
 
           <div className="card p-6">
