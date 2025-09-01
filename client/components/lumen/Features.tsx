@@ -148,19 +148,11 @@ export default function Features() {
           {/* 5.4 Lab Report Analyzer */}
           <Card>
             <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
-            <div
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => e.preventDefault()}
-              className="mt-3 grid place-items-center h-32 rounded-xl border-2 border-dashed border-brand-blue/40 bg-secondary text-sm text-muted-foreground"
-            >
-              <Upload className="mr-2" /> Drag & drop report here
-            </div>
-            <div className="mt-3 text-sm">
-              <div className="flex items-center gap-2">
-                <BadgeAlert className="text-amber-500" /> Hemoglobin low → Eat
-                spinach, dal, jaggery. Severity: Moderate (Follow‑up in 1–2
-                weeks).
-              </div>
+            <div className="mt-3">
+              <Suspense fallback={<div className="text-sm text-muted-foreground">Loading…</div>}>
+                {/* Interactive upload calling backend */}
+                <LabAnalyzer />
+              </Suspense>
             </div>
           </Card>
 
