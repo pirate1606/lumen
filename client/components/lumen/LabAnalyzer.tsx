@@ -44,7 +44,7 @@ export default function LabAnalyzer() {
         json = null;
       }
       if (!res.ok) {
-        setErr(json?.error || json?.details || `Upload failed (HTTP ${res.status})`);
+        setErr(`${json?.error || `Upload failed (HTTP ${res.status})`} ${json?.details ? `— ${json.details}` : ""}`);
       } else {
         setData(json || { error: "Empty response" });
       }
