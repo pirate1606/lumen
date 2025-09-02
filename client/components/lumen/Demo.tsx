@@ -17,7 +17,7 @@ function Cube() {
 
 export default function Demo() {
   const [activeTab, setActiveTab] = useState("chatbot");
-  
+
   return (
     <section id="demo" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -77,11 +77,13 @@ export default function Demo() {
           <h3 className="text-2xl font-bold text-center mb-8">
             Additional AI Tools
           </h3>
-          
+
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Voice Processing */}
             <div className="card p-6">
-              <h4 className="font-semibold text-lg mb-4">Voice-to-Text Processing</h4>
+              <h4 className="font-semibold text-lg mb-4">
+                Voice-to-Text Processing
+              </h4>
               <p className="text-sm text-muted-foreground mb-4">
                 Convert your voice to text using OpenAI Whisper AI technology
               </p>
@@ -121,7 +123,6 @@ export default function Demo() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
