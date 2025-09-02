@@ -119,32 +119,34 @@ export default function Features() {
           </Card>
 
           {/* 5.3 PEARL CT Reconstruction */}
-          <Card>
-            <h3 className="font-semibold">PEARL CT Reconstruction</h3>
-            <div className="mt-3 h-48 rounded-xl bg-secondary overflow-hidden">
-              <Suspense
-                fallback={
-                  <div className="h-full grid place-items-center text-sm text-muted-foreground">
-                    Loading 3D…
-                  </div>
-                }
-              >
-                <Canvas camera={{ position: [2.8, 2.8, 2.8] }}>
-                  <ambientLight intensity={0.6} />
-                  <RotatingCube />
-                  <OrbitControls
-                    enablePan={false}
-                    enableZoom={false}
-                    autoRotate
-                    autoRotateSpeed={1.2}
-                  />
-                </Canvas>
-              </Suspense>
-            </div>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Interactive 3D model preview (placeholder).
-            </p>
-          </Card>
+          <a href="/pearl" className="block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl">
+            <Card>
+              <h3 className="font-semibold">PEARL CT Reconstruction</h3>
+              <div className="mt-3 h-48 rounded-xl bg-secondary overflow-hidden">
+                <Suspense
+                  fallback={
+                    <div className="h-full grid place-items-center text-sm text-muted-foreground">
+                      Loading 3D…
+                    </div>
+                  }
+                >
+                  <Canvas camera={{ position: [2.8, 2.8, 2.8] }}>
+                    <ambientLight intensity={0.6} />
+                    <RotatingCube />
+                    <OrbitControls
+                      enablePan={false}
+                      enableZoom={false}
+                      autoRotate
+                      autoRotateSpeed={1.2}
+                    />
+                  </Canvas>
+                </Suspense>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Open dedicated PEARL page →
+              </p>
+            </Card>
+          </a>
 
           {/* 5.4 Lab Report Analyzer */}
           <Card>
