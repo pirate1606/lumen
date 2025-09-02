@@ -49,7 +49,10 @@ export default function Hero() {
             <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
               <span className="block font-surgena font-extrabold">LUMEN</span>
             </h1>
-            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            <p className="mt-2 text-base sm:text-lg text-muted-foreground">
+              <span className="font-surgena font-bold text-foreground">LUMEN</span> — Localized Unified Medical ENgine for Triage
+            </p>
+            <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Smarter, Safer, Accessible Healthcare for Everyday India
             </div>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
@@ -57,11 +60,11 @@ export default function Hero() {
               guidance — in your language.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/#demo" className="btn-cta">
+              <a href="#demo" className="btn-cta">
                 Try LUMEN
               </a>
               <a
-                href="/#about"
+                href="#about"
                 className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
               >
                 Learn More
