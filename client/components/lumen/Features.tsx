@@ -119,7 +119,10 @@ export default function Features() {
           </Card>
 
           {/* 5.3 PEARL CT Reconstruction */}
-          <a href="/pearl" className="block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl">
+          <a
+            href="/pearl"
+            className="block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl"
+          >
             <Card>
               <h3 className="font-semibold">PEARL CT Reconstruction</h3>
               <div className="mt-3 h-48 rounded-xl bg-secondary overflow-hidden">

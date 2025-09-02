@@ -20,7 +20,9 @@ export default function PearlPage() {
               <div className="relative p-8 sm:p-12">
                 <div className="max-w-3xl">
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                    <span className="block font-surgena font-extrabold">PEARL</span>
+                    <span className="block font-surgena font-extrabold">
+                      PEARL
+                    </span>
                   </h1>
                   <p className="mt-4 text-lg text-muted-foreground">
                     3D CT Low‑Dose Reconstruction & Viewer
@@ -36,13 +38,17 @@ export default function PearlPage() {
                   </div>
 
                   <p className="mt-6 text-muted-foreground max-w-prose">
-                    We’re actively building a safe, accessible CT reconstruction workflow
-                    designed for lower radiation doses. The viewer prototype will land here with
-                    interactive volume rendering, slice navigation, and real‑time denoising.
+                    We’re actively building a safe, accessible CT reconstruction
+                    workflow designed for lower radiation doses. The viewer
+                    prototype will land here with interactive volume rendering,
+                    slice navigation, and real‑time denoising.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <Link to="/" className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent">
+                    <Link
+                      to="/"
+                      className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
+                    >
                       Back to Home
                     </Link>
                   </div>
@@ -64,8 +70,9 @@ export default function PearlPage() {
               <div className="card p-6">
                 <h2 className="text-xl font-semibold">Safety & Ethics</h2>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  PEARL is for educational and research purposes while in development. It is not a
-                  medical device and should not be used for diagnosis or treatment.
+                  PEARL is for educational and research purposes while in
+                  development. It is not a medical device and should not be used
+                  for diagnosis or treatment.
                 </p>
               </div>
             </div>
