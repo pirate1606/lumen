@@ -46,7 +46,7 @@ export default function Hero() {
               Now launching in India
             </div>
             <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-              <span className="block font-surgena font-extrabold">LUMEN</span>
+              <span className="block font-sans font-extrabold">LUMEN</span>
             </h1>
             <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
