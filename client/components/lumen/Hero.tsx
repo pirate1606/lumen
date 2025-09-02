@@ -63,19 +63,23 @@ export default function Hero() {
             <div className="relative mx-auto max-w-md w-full">
               <div className="card p-0 overflow-hidden">
                 <div className="h-80 sm:h-96 lg:h-[440px] bg-secondary">
-                  <Canvas camera={{ position: [1.8, 1.8, 2.2], fov: 45 }}>
-                    <ambientLight intensity={0.6} />
-                    <directionalLight position={[3, 4, 2]} intensity={0.7} />
-                    <DNAHelix />
-                    <OrbitControls
-                      enablePan={false}
-                      enableZoom={false}
-                      autoRotate
-                      autoRotateSpeed={0.6}
-                      minPolarAngle={Math.PI / 3}
-                      maxPolarAngle={(2 * Math.PI) / 3}
-                    />
-                  </Canvas>
+                  {mounted ? (
+                    <R3FErrorBoundary>
+                      <Canvas camera={{ position: [1.8, 1.8, 2.2], fov: 45 }}>
+                        <ambientLight intensity={0.6} />
+                        <directionalLight position={[3, 4, 2]} intensity={0.7} />
+                        <DNAHelix />
+                        <OrbitControls
+                          enablePan={false}
+                          enableZoom={false}
+                          autoRotate
+                          autoRotateSpeed={0.6}
+                          minPolarAngle={Math.PI / 3}
+                          maxPolarAngle={(2 * Math.PI) / 3}
+                        />
+                      </Canvas>
+                    </R3FErrorBoundary>
+                  ) : null}
                 </div>
               </div>
             </div>
