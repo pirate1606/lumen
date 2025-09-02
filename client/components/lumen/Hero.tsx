@@ -52,7 +52,10 @@ export default function Hero() {
               Local Unified Medical Engine for triage
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo" className="btn-cta">
+              <a
+                href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
+                className="btn-cta"
+              >
                 Try LUMEN
               </a>
               <a

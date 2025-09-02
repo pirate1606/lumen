@@ -53,7 +53,10 @@ export default function ScratchReveal({
     ctx.globalCompositeOperation = "source-over";
     // Fill overlay
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (overlay.startsWith("linear-gradient") || overlay.startsWith("radial-gradient")) {
+    if (
+      overlay.startsWith("linear-gradient") ||
+      overlay.startsWith("radial-gradient")
+    ) {
       // For gradients, draw to a temp canvas via CSS paint using DOM background.
       // Simpler approach: solid fill as fallback for gradient string.
       ctx.fillStyle = "rgba(2,6,23,0.85)";
@@ -66,19 +69,22 @@ export default function ScratchReveal({
     clearedRef.current = 0;
   }, [overlay]);
 
-  const drawCircle = React.useCallback((x: number, y: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    const dpr = dprRef.current;
-    ctx.save();
-    ctx.globalCompositeOperation = "destination-out";
-    ctx.beginPath();
-    ctx.arc(x * dpr, y * dpr, brushRadius * dpr, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-  }, [brushRadius]);
+  const drawCircle = React.useCallback(
+    (x: number, y: number) => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const dpr = dprRef.current;
+      ctx.save();
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x * dpr, y * dpr, brushRadius * dpr, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    },
+    [brushRadius],
+  );
 
   const getPointer = (e: React.MouseEvent | React.TouchEvent) => {
     const canvas = canvasRef.current;
