@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -31,15 +30,13 @@ export default function Hero() {
               guidance — in your language.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/#demo" className="btn-cta">
-                Try LUMEN
-              </Link>
-              <Link
-                to="/#about"
+              <a href="/#demo" className="btn-cta">Try LUMEN</a>
+              <a
+                href="/#about"
                 className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
               >
                 Learn More
-              </Link>
+              </a>
             </div>
           </motion.div>
 
