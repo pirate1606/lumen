@@ -17,7 +17,7 @@ function Cube() {
 
 export default function Demo() {
   const [activeTab, setActiveTab] = useState("chatbot");
-  
+
   return (
     <section id="demo" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -77,11 +77,13 @@ export default function Demo() {
           <h3 className="text-2xl font-bold text-center mb-8">
             Additional AI Tools
           </h3>
-          
+
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Voice Processing */}
             <div className="card p-6">
-              <h4 className="font-semibold text-lg mb-4">Voice-to-Text Processing</h4>
+              <h4 className="font-semibold text-lg mb-4">
+                Voice-to-Text Processing
+              </h4>
               <p className="text-sm text-muted-foreground mb-4">
                 Convert your voice to text using OpenAI Whisper AI technology
               </p>
@@ -119,24 +121,6 @@ export default function Demo() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <div className="inline-block p-6 bg-gradient-to-r from-blue-50 to-teal-50 rounded-xl border border-blue-200">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">
-              Ready to Experience AI Healthcare?
-            </h4>
-            <p className="text-gray-600 mb-4">
-              Try our working AI models for healthcare assistance, voice processing, and more.
-            </p>
-            <a 
-              href="/ai-tools" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Explore All AI Tools
-            </a>
           </div>
         </div>
       </div>
