@@ -4,7 +4,24 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
 
+class R3FErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch() {}
+  render() {
+    if (this.state.hasError) return <div className="h-80 sm:h-96 lg:h-[440px] grid place-items-center text-muted-foreground">3D preview unavailable</div>;
+    return this.props.children as any;
+  }
+}
+
 export default function Hero() {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
   return (
     <section id="top" className="relative pt-28">
       <div className="absolute inset-0 wave-bg"></div>
