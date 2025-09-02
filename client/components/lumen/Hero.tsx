@@ -46,7 +46,7 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-cta animate-pulse" />
               Now launching in India
             </div>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
               <span className="block font-surgena font-extrabold">LUMEN</span>
             </h1>
             <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">

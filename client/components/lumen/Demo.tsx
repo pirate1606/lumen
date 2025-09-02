@@ -30,7 +30,10 @@ export default function Demo() {
 
         <div className="mt-10 grid lg:grid-cols-3 gap-6">
           {/* CT Viewer */}
-          <div className="card p-6">
+          <a
+            href="/pearl"
+            className="card p-6 block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl"
+          >
             <h3 className="font-semibold">3D CT Viewer</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Interactive 3D visualization
@@ -47,7 +50,8 @@ export default function Demo() {
                 />
               </Canvas>
             </div>
-          </div>
+            <p className="mt-3 text-sm text-muted-foreground">Open PEARL →</p>
+          </a>
 
           {/* Lab Report Analyzer */}
           <div className="card p-6">
