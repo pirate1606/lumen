@@ -22,9 +22,11 @@ export default function Hero() {
               Now launching in India
             </div>
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-              <span className="block font-surgena">LUMEN</span>
-              <span className="block mt-1">Smarter, Safer, Accessible Healthcare for Everyday India</span>
+              <span className="block font-surgena font-extrabold">LUMEN</span>
             </h1>
+            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+              Smarter, Safer, Accessible Healthcare for Everyday India
+            </div>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
               AI-powered triage, lab analysis, CT reconstruction, and healthcare
               guidance — in your language.
