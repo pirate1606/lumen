@@ -73,7 +73,7 @@ export default function DevelopersPage() {
           <h1 className="text-3xl font-bold">Developers</h1>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <DeveloperCard
-              name="Sanchitsai Nipanikar"
+              name="Sanchit"
               photo={DEFAULT_PHOTO}
               cv={CV_URL}
               github={"https://github.com/sanchit1606"}
