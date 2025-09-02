@@ -47,14 +47,14 @@ function DeveloperCard({
             </button>
           )}
         </div>
-        <div className="flex flex-wrap gap-2 pt-1">
+        <div className="flex gap-2 pt-1 flex-wrap">
           {github && (
-            <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-input bg-background font-semibold hover:bg-accent">
+            <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent">
               <Github size={16} /> GitHub
             </a>
           )}
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-input bg-background font-semibold hover:bg-accent">
+            <a href={linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent">
               <Linkedin size={16} /> LinkedIn
             </a>
           )}
@@ -79,9 +79,9 @@ export default function DevelopersPage() {
               github={"https://github.com/sanchit1606"}
               linkedin={"https://www.linkedin.com/in/sanchit1606/"}
             />
-            <DeveloperCard name="Team member" />
-            <DeveloperCard name="Team member" />
-            <DeveloperCard name="Team member" />
+            <DeveloperCard name="Priyal" />
+            <DeveloperCard name="Paras" />
+            <DeveloperCard name="Kshitij" />
           </div>
         </section>
       </main>
