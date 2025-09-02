@@ -13,7 +13,7 @@ export default function HowItWorks() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="how" className="py-20">
+    <section id="how" className="py-20 scroll-mt-28 md:scroll-mt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-center">
           How it Works
