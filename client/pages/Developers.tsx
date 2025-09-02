@@ -77,7 +77,7 @@ export default function DevelopersPage() {
               photo={DEFAULT_PHOTO}
               cv={CV_URL}
               github={"https://github.com/sanchit1606"}
-              linkedin={""}
+              linkedin={"https://www.linkedin.com/in/sanchit1606/"}
             />
             <DeveloperCard name="Team member" />
             <DeveloperCard name="Team member" />
