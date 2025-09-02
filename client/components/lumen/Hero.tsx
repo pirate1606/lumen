@@ -32,7 +32,6 @@ export default function Hero() {
   React.useEffect(() => setMounted(true), []);
   return (
     <section id="top" className="relative pt-28">
-      <div className="absolute inset-0 wave-bg"></div>
       <div className="absolute -z-10 left-1/2 top-24 -translate-x-1/2 h-[520px] w-[520px] gradient-orb rounded-full blur-2xl opacity-40"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,21 +46,20 @@ export default function Hero() {
               Now launching in India
             </div>
             <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-              <span className="block font-surgena font-extrabold">LUMEN</span>
+              <span className="block font-sans font-extrabold">LUMEN</span>
             </h1>
-            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-              Smarter, Safer, Accessible Healthcare for Everyday India
+            <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+              Local Unified Medical Engine for triage
             </div>
-            <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              AI-powered triage, lab analysis, CT reconstruction, and healthcare
-              guidance — in your language.
-            </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/#demo" className="btn-cta">
+              <a
+                href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
+                className="btn-cta"
+              >
                 Try LUMEN
               </a>
               <a
-                href="/#about"
+                href="#about"
                 className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
               >
                 Learn More

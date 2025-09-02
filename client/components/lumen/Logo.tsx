@@ -24,7 +24,7 @@ export default function Logo({ size = 28, withWordmark = true }: Props) {
       </svg>
       {withWordmark && (
         <span
-          className="text-xl font-extrabold tracking-wider"
+          className="text-xl font-extrabold tracking-wider font-surgena"
           style={{
             backgroundImage:
               "linear-gradient(90deg, hsl(var(--brand-teal)) 0%, hsl(var(--brand-blue)) 60%, hsl(var(--brand-teal)) 100%)",
