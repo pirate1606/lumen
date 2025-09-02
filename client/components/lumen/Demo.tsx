@@ -122,23 +122,6 @@ export default function Demo() {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <div className="inline-block p-6 bg-gradient-to-r from-blue-50 to-teal-50 rounded-xl border border-blue-200">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">
-              Ready to Experience AI Healthcare?
-            </h4>
-            <p className="text-gray-600 mb-4">
-              Try our working AI models for healthcare assistance, voice processing, and more.
-            </p>
-            <a 
-              href="/ai-tools" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Explore All AI Tools
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
