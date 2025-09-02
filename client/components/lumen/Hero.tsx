@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { HeartPulse, Stethoscope, Dna } from "lucide-react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import DNAHelix from "./DNAHelix";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
@@ -21,7 +23,8 @@ export default function Hero() {
               Now launching in India
             </div>
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-              LUMEN — Smarter, Safer, Accessible Healthcare for Everyday India
+              <span className="block font-surgena">LUMEN</span>
+              <span className="block mt-1">Smarter, Safer, Accessible Healthcare for Everyday India</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
               AI-powered triage, lab analysis, CT reconstruction, and healthcare
@@ -41,25 +44,23 @@ export default function Hero() {
           </motion.div>
 
           <div className="relative">
-            <div className="relative mx-auto max-w-md">
-              <div className="card p-6">
-                <div className="grid grid-cols-3 gap-3">
-                  {[HeartPulse, Stethoscope, Dna].map((Icon, i) => (
-                    <motion.div
-                      key={i}
-                      className="flex h-24 items-center justify-center rounded-xl bg-secondary text-primary"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15 * i, duration: 0.6 }}
-                    >
-                      <Icon className="size-8" />
-                    </motion.div>
-                  ))}
+            <div className="relative mx-auto max-w-md w-full">
+              <div className="card p-0 overflow-hidden">
+                <div className="h-80 sm:h-96 lg:h-[440px] bg-secondary">
+                  <Canvas camera={{ position: [1.8, 1.8, 2.2], fov: 45 }}>
+                    <ambientLight intensity={0.6} />
+                    <directionalLight position={[3, 4, 2]} intensity={0.7} />
+                    <DNAHelix />
+                    <OrbitControls
+                      enablePan={false}
+                      enableZoom={false}
+                      autoRotate
+                      autoRotateSpeed={0.6}
+                      minPolarAngle={Math.PI / 3}
+                      maxPolarAngle={(2 * Math.PI) / 3}
+                    />
+                  </Canvas>
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  Animated gradient waves and floating medical icons bring the
-                  brand to life.
-                </p>
               </div>
             </div>
           </div>
