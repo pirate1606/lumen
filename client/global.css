@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Surgena";
+  src: url("https://cdn.builder.io/o/assets%2F445519f4dc2147579ea6fb2243527f29%2F1c84a491584a47fc9c2e0b1bb970eff2?alt=media&token=58cf37d8-b8e9-4af3-b7dd-d48d0c14f0c8&apiKey=445519f4dc2147579ea6fb2243527f29") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer base {
   /**
    * Tailwind CSS theme
@@ -123,6 +131,9 @@
   }
   .card {
     @apply rounded-2xl bg-card/80 backdrop-blur shadow-smooth border border-border;
+  }
+  .font-surgena {
+    font-family: "Surgena", "Inter", "Roboto", "Open Sans", ui-sans-serif, system-ui, sans-serif;
   }
   .gradient-orb {
     background:
