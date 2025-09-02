@@ -44,6 +44,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/technical" element={<TechnicalPage />} />
           <Route path="/pearl" element={<PearlPage />} />
+          <Route path="/developers" element={React.createElement(require("./pages/Developers").default)} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
