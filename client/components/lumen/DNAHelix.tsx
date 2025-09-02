@@ -39,7 +39,8 @@ export default function DNAHelix({
       ptsA.push(new THREE.Vector3(ax, y, az));
       ptsB.push(new THREE.Vector3(bx, y, bz));
       // Add a rung every few segments for visual interest
-      if (i % 6 === 0) rungPairs.push([ptsA[ptsA.length - 1], ptsB[ptsB.length - 1]]);
+      if (i % 6 === 0)
+        rungPairs.push([ptsA[ptsA.length - 1], ptsB[ptsB.length - 1]]);
     }
 
     return { strandA: ptsA, strandB: ptsB, rungs: rungPairs };
@@ -58,13 +59,21 @@ export default function DNAHelix({
       {strandA.map((p, i) => (
         <mesh key={`a-${i}`} position={p.toArray()}>
           <sphereGeometry args={[0.045, 16, 16]} />
-          <meshStandardMaterial color={colorA} roughness={0.4} metalness={0.1} />
+          <meshStandardMaterial
+            color={colorA}
+            roughness={0.4}
+            metalness={0.1}
+          />
         </mesh>
       ))}
       {strandB.map((p, i) => (
         <mesh key={`b-${i}`} position={p.toArray()}>
           <sphereGeometry args={[0.045, 16, 16]} />
-          <meshStandardMaterial color={colorB} roughness={0.4} metalness={0.1} />
+          <meshStandardMaterial
+            color={colorB}
+            roughness={0.4}
+            metalness={0.1}
+          />
         </mesh>
       ))}
 
@@ -74,11 +83,18 @@ export default function DNAHelix({
         const dir = b.clone().sub(a);
         const len = dir.length();
         const quat = new THREE.Quaternion();
-        quat.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+        quat.setFromUnitVectors(
+          new THREE.Vector3(0, 1, 0),
+          dir.clone().normalize(),
+        );
         return (
           <mesh key={`r-${i}`} position={mid.toArray()} quaternion={quat}>
             <cylinderGeometry args={[0.02, 0.02, len, 8]} />
-            <meshStandardMaterial color={rungColor} roughness={0.5} metalness={0.1} />
+            <meshStandardMaterial
+              color={rungColor}
+              roughness={0.5}
+              metalness={0.1}
+            />
           </mesh>
         );
       })}

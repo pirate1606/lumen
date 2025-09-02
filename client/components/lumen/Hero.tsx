@@ -4,7 +4,10 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
 
-class R3FErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
+class R3FErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean }
+> {
   constructor(props: any) {
     super(props);
     this.state = { hasError: false };
@@ -14,7 +17,12 @@ class R3FErrorBoundary extends React.Component<{ children: React.ReactNode }, { 
   }
   componentDidCatch() {}
   render() {
-    if (this.state.hasError) return <div className="h-80 sm:h-96 lg:h-[440px] grid place-items-center text-muted-foreground">3D preview unavailable</div>;
+    if (this.state.hasError)
+      return (
+        <div className="h-80 sm:h-96 lg:h-[440px] grid place-items-center text-muted-foreground">
+          3D preview unavailable
+        </div>
+      );
     return this.props.children as any;
   }
 }
@@ -49,7 +57,9 @@ export default function Hero() {
               guidance — in your language.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/#demo" className="btn-cta">Try LUMEN</a>
+              <a href="/#demo" className="btn-cta">
+                Try LUMEN
+              </a>
               <a
                 href="/#about"
                 className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
@@ -67,7 +77,10 @@ export default function Hero() {
                     <R3FErrorBoundary>
                       <Canvas camera={{ position: [1.8, 1.8, 2.2], fov: 45 }}>
                         <ambientLight intensity={0.6} />
-                        <directionalLight position={[3, 4, 2]} intensity={0.7} />
+                        <directionalLight
+                          position={[3, 4, 2]}
+                          intensity={0.7}
+                        />
                         <DNAHelix />
                         <OrbitControls
                           enablePan={false}
