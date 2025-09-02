@@ -45,6 +45,12 @@ export default function Navbar() {
               >
                 Contact
               </a>
+              <a
+                href="/developers"
+                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
+              >
+                Developers
+              </a>
             </div>
             <div className="flex items-center gap-2">
               <a href="#demo" className="btn-cta">
