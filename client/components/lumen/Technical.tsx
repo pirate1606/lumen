@@ -270,7 +270,7 @@ export default function Technical() {
           </div>
 
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl px-4">
               <TeamCard
                 name="Sanchit"
                 role="Full Stack Developer"
