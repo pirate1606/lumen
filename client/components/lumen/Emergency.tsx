@@ -87,42 +87,56 @@ export default function Emergency() {
 
         <div className="mt-6 overflow-hidden" ref={emblaRef}>
           <div className="flex gap-6">
-            {slides.map((s) => (
-              <div
-                key={s.title}
-                className="min-w-0 flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_30%]"
-              >
-                <div className="card p-6 h-full">
-                  <h3 className="font-semibold">{s.title}</h3>
-                  <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
-                    {s.steps.map((step, i) => (
-                      <div key={i} className="rounded-xl bg-secondary p-3">
-                        <div className="h-16 rounded-md bg-gradient-to-br from-brand-blue/20 to-brand-teal/20" />
-                        <p className="mt-2">
-                          {i + 1}. {step}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex items-center gap-3">
-                    <InteractiveHoverButton
-                      onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
-                      className="min-w-[150px]"
-                    >
-                      Play Audio
-                    </InteractiveHoverButton>
-                    <HeroVideoDialog
-                      videoSrc={VIDEO_LINK}
-                      trigger={
-                        <InteractiveHoverButton className="min-w-[150px]">
-                          Play Video
-                        </InteractiveHoverButton>
-                      }
-                    />
+            {slides.map((s) => {
+              const iconsMap: Record<string, React.ElementType[]> = {
+                Snakebite: [Syringe, Shield, FirstAidKit],
+                Drowning: [Waves, LifeBuoy, PhoneCall],
+                "Fire Burns": [Flame, FirstAidKit, Shield],
+                "Electric Shock": [Zap, Shield, PhoneCall],
+              };
+              const icons = iconsMap[s.title] || [FirstAidKit, Shield, PhoneCall];
+              return (
+                <div
+                  key={s.title}
+                  className="min-w-0 flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_30%]"
+                >
+                  <div className="card p-6 h-full flex flex-col">
+                    <h3 className="font-semibold">{s.title}</h3>
+                    <div className="mt-3 grid grid-cols-3 gap-2 text-xs flex-1">
+                      {s.steps.map((step, i) => {
+                        const Icon = icons[i % icons.length];
+                        return (
+                          <div key={i} className="rounded-xl bg-secondary p-3">
+                            <div className="h-16 rounded-md bg-gradient-to-br from-brand-blue/20 to-brand-teal/20 grid place-items-center">
+                              <Icon className="text-brand-blue" size={22} />
+                            </div>
+                            <p className="mt-2">
+                              {i + 1}. {step}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-4 flex items-center gap-3 flex-wrap">
+                      <InteractiveHoverButton
+                        onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
+                        className="min-w-[150px]"
+                      >
+                        Play Audio
+                      </InteractiveHoverButton>
+                      <HeroVideoDialog
+                        videoSrc={VIDEO_LINK}
+                        trigger={
+                          <InteractiveHoverButton className="min-w-[150px]">
+                            Play Video
+                          </InteractiveHoverButton>
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
