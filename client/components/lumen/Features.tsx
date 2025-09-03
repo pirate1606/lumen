@@ -127,6 +127,11 @@ export default function Features() {
                 Chest pain triage with risk factors and lifestyle advice.
               </TabsContent>
             </Tabs>
+            <div className="mt-4 pt-3 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Prototype: Salesforce/blip-image-captioning-base
+              </p>
+            </div>
           </Card>
 
           {/* 5.3 PEARL CT Reconstruction */}
