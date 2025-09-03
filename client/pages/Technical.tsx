@@ -3,6 +3,7 @@ import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import TechnicalContent from "@/components/lumen/Technical";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+import { IconCloud } from "@/components/magicui/icon-cloud";
 import { cn } from "@/lib/utils";
 
 export default function TechnicalPage() {
