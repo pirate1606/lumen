@@ -141,6 +141,9 @@ export default function Features() {
           >
             <Card>
               <h3 className="font-semibold">PEARL CT Reconstruction</h3>
+              <p className="mt-1 text-sm font-bold text-brand-blue">
+                Custom AI Model (Computer Vision)
+              </p>
               <div className="mt-3 h-48 rounded-xl bg-secondary overflow-hidden">
                 <Suspense
                   fallback={
