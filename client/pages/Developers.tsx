@@ -7,7 +7,7 @@ import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 const CV_URL =
   "https://cdn.builder.io/o/assets%2F445519f4dc2147579ea6fb2243527f29%2F64cb59ca2bb34b889f0a978bf1db3d56?alt=media&token=f1b2d979-0083-4c4e-9bca-11ee86faadd6&apiKey=445519f4dc2147579ea6fb2243527f29";
 const DEFAULT_PHOTO =
-  "https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F29b7158d37314f3eb52498f9fc477c47?format=webp&width=800";
+  "https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F4587d99ad8074e819191cef9f9a8a2c7?format=webp&width=800";
 
 function DeveloperCard({
   name,
