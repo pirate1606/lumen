@@ -2,13 +2,20 @@ import React from "react";
 import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import TechnicalContent from "@/components/lumen/Technical";
-import { WarpBackground } from "@/components/magicui/warp-background";
+import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { cn } from "@/lib/utils";
 
 export default function TechnicalPage() {
   return (
     <div className="relative">
-      <WarpBackground className="absolute inset-0 -z-10 border-0 p-0 rounded-none" />
+      <FlickeringGrid
+        className="absolute inset-0 -z-10 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
       <Navbar />
       <main className="pt-24 relative z-10">
         <section className="py-12">
