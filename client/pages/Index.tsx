@@ -5,7 +5,6 @@ import Features from "@/components/lumen/Features";
 import Languages from "@/components/lumen/Languages";
 import Demo from "@/components/lumen/Demo";
 import Emergency from "@/components/lumen/Emergency";
-import About from "@/components/lumen/About";
 import Contact from "@/components/lumen/Contact";
 import Footer from "@/components/lumen/Footer";
 import SectionDivider from "@/components/lumen/SectionDivider";
