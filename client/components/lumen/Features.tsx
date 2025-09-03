@@ -226,6 +226,9 @@ export default function Features() {
             <h3 className="font-semibold">
               Preliminary Triage & Emergency Education
             </h3>
+            <p className="mt-1 text-sm font-bold text-brand-blue">
+              GPT (grounded on emergency guidelines)
+            </p>
             <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
               {["Snakebite", "Drowning", "Burns", "Electric Shock"].map((t) => (
                 <div
