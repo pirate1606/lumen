@@ -84,6 +84,9 @@ export default function Features() {
           {/* 5.2 AI Specialist Modules */}
           <Card>
             <h3 className="font-semibold">AI Specialist Modules</h3>
+            <p className="mt-1 text-sm font-bold text-brand-blue">
+              GPT (for clinician + patient summaries)
+            </p>
             <Tabs defaultValue="derm" className="mt-3">
               <TabsList className="grid grid-cols-3 gap-2 bg-secondary rounded-lg p-1">
                 <TabsTrigger
