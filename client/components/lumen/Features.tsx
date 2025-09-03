@@ -32,7 +32,7 @@ export default function Features() {
           Powerful Features
         </h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Each module includes interactive examples and micro��interactions.
+          Each module includes interactive examples and micro‑interactions.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -203,6 +203,9 @@ export default function Features() {
             <h3 className="font-semibold">
               Government Schemes & Benefits Assistant
             </h3>
+            <p className="mt-1 text-sm font-bold text-brand-blue">
+              GPT (grounded on govt. docs)
+            </p>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <div className="rounded-xl bg-secondary p-3">
                 User: Dialysis help in UP?
