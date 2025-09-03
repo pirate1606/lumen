@@ -22,12 +22,6 @@ export default function Navbar() {
                 Features
               </a>
               <a
-                href="#how"
-                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-              >
-                How it works
-              </a>
-              <a
                 href="#demo"
                 className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
               >
