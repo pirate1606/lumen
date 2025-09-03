@@ -4,25 +4,39 @@ import { cn } from "@/lib/utils";
 
 export type InteractiveGridPatternProps = {
   className?: string;
-  width?: number; // cell width
-  height?: number; // cell height
+  width?: number; // cell width in viewBox units
+  height?: number; // cell height in viewBox units
   squares?: [number, number]; // [cols, rows]
   squaresClassName?: string; // class applied to hovered square(s)
   color?: string;
   opacity?: number;
+  highlightColor?: string; // fallback when no class provided
 };
 
 export function InteractiveGridPattern({
   className,
-  width = 24,
-  height = 24,
-  squares = [64, 64],
+  width = 36,
+  height = 36,
+  squares = [72, 96],
   squaresClassName,
   color = "#CBD5E1",
-  opacity = 0.5,
+  opacity = 0.45,
+  highlightColor = "#60A5FA",
 }: InteractiveGridPatternProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const [hover, setHover] = useState<{ x: number; y: number } | null>(null);
+  const [hoverPx, setHoverPx] = useState<{ x: number; y: number } | null>(null);
+  const [size, setSize] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => {
+      setSize({ w: el.clientWidth, h: el.clientHeight });
+    });
+    ro.observe(el);
+    setSize({ w: el.clientWidth, h: el.clientHeight });
+    return () => ro.disconnect();
+  }, []);
 
   // Track mouse globally so the background can be pointer-events-none
   useEffect(() => {
@@ -30,14 +44,19 @@ export function InteractiveGridPattern({
       const el = wrapperRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
-      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
-        setHover(null);
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        setHoverPx(null);
         return;
       }
-      setHover({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      setHoverPx({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     }
     function onLeave() {
-      setHover(null);
+      setHoverPx(null);
     }
     window.addEventListener("mousemove", onMove);
     window.addEventListener("scroll", onLeave, { passive: true });
@@ -55,12 +74,17 @@ export function InteractiveGridPattern({
   const viewH = rows * height;
 
   const hoveredIndex = useMemo(() => {
-    if (!hover) return -1;
-    const cx = Math.floor(hover.x / width);
-    const cy = Math.floor(hover.y / height);
+    if (!hoverPx || size.w === 0 || size.h === 0) return -1;
+    // Map from CSS pixels to viewBox units
+    const scaleX = viewW / size.w;
+    const scaleY = viewH / size.h;
+    const vx = hoverPx.x * scaleX;
+    const vy = hoverPx.y * scaleY;
+    const cx = Math.floor(vx / width);
+    const cy = Math.floor(vy / height);
     if (cx < 0 || cy < 0 || cx >= cols || cy >= rows) return -1;
     return cy * cols + cx;
-  }, [hover, width, height, cols, rows]);
+  }, [hoverPx, size.w, size.h, viewW, viewH, width, height, cols, rows]);
 
   const cells = useMemo(() => {
     const arr: { x: number; y: number; i: number }[] = [];
@@ -85,11 +109,11 @@ export function InteractiveGridPattern({
               y={c.y * height + 0.5}
               width={width - 1}
               height={height - 1}
-              rx={2}
-              ry={2}
+              rx={3}
+              ry={3}
               opacity={isHover ? 0.95 : opacity}
               className={cn(isHover ? squaresClassName : undefined)}
-              fill={isHover ? undefined : color}
+              fill={isHover && !squaresClassName ? highlightColor : color}
             />
           );
         })}
