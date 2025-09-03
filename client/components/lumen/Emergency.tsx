@@ -33,6 +33,9 @@ const slides = [
   },
 ];
 
+const VIDEO_LINK =
+  "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb";
+
 export default function Emergency() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start" });
   const interval = useRef<number | null>(null);
