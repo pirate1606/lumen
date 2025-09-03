@@ -3,18 +3,18 @@ import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import TechnicalContent from "@/components/lumen/Technical";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
-import { cn } from "@/lib/utils";
 
 export default function TechnicalPage() {
   return (
     <div className="relative">
       <FlickeringGrid
-        className="absolute inset-0 -z-10 size-full"
+        className="absolute inset-0 -z-10 size-full [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
         squareSize={4}
         gridGap={6}
-        color="#6B7280"
-        maxOpacity={0.5}
-        flickerChance={0.1}
+        color="#60A5FA"
+        maxOpacity={0.45}
+        flickerChance={0.08}
+        speed={0.4}
       />
       <Navbar />
       <main className="pt-24 relative z-10">
