@@ -25,7 +25,11 @@ const slides = [
   },
   {
     title: "CPR",
-    steps: ["Call for help", "Check responsiveness", "Start chest compressions"],
+    steps: [
+      "Call for help",
+      "Check responsiveness",
+      "Start chest compressions",
+    ],
     videoUrl: "https://www.youtube.com/embed/VSKhM-ev808",
   },
   {
@@ -120,7 +124,10 @@ export default function Emergency() {
                       {s.steps.map((step, i) => {
                         const Icon = icons[i % icons.length];
                         return (
-                          <div key={i} className="rounded-xl bg-secondary p-3 flex flex-col h-full">
+                          <div
+                            key={i}
+                            className="rounded-xl bg-secondary p-3 flex flex-col h-full"
+                          >
                             <div className="h-16 rounded-md bg-gradient-to-br from-brand-blue/20 to-brand-teal/20 grid place-items-center">
                               <Icon className="text-brand-blue" size={22} />
                             </div>

@@ -76,7 +76,8 @@ export default function Features() {
             </p>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype model used: ai4bharat/indic-gpt, openai/whisper-small, coqui/XTTS-v2
+                Prototype model used: ai4bharat/indic-gpt, openai/whisper-small,
+                coqui/XTTS-v2
               </p>
             </div>
           </Card>
@@ -129,7 +130,8 @@ export default function Features() {
             </Tabs>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype model used: Salesforce/blip-image-captioning-base, liuhaotian/llava-v1.5-7b
+                Prototype model used: Salesforce/blip-image-captioning-base,
+                liuhaotian/llava-v1.5-7b
               </p>
             </div>
           </Card>
@@ -193,7 +195,9 @@ export default function Features() {
             </div>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype model used: naver-clova-ix/donut-base-finetuned-docvqa, microsoft/layoutlmv3-base
+                Prototype model used:
+                naver-clova-ix/donut-base-finetuned-docvqa,
+                microsoft/layoutlmv3-base
               </p>
             </div>
           </Card>
@@ -216,7 +220,8 @@ export default function Features() {
             </div>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype model used: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+                Prototype model used:
+                sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
               </p>
             </div>
           </Card>

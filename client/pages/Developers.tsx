@@ -43,7 +43,12 @@ function DeveloperCard({
         </div>
         <div className="flex flex-wrap gap-2">
           {cv ? (
-            <a href={cv} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent">
+            <a
+              href={cv}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent"
+            >
               View CV
             </a>
           ) : (

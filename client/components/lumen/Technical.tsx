@@ -1,5 +1,13 @@
 import React from "react";
-import { BookOpen, Cpu, Shield, Workflow, Link2, Github, Linkedin } from "lucide-react";
+import {
+  BookOpen,
+  Cpu,
+  Shield,
+  Workflow,
+  Link2,
+  Github,
+  Linkedin,
+} from "lucide-react";
 
 import ZoomableImage from "./ZoomableImage";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -47,8 +55,8 @@ function TeamCard({
               linear-gradient(60deg, hsl(var(--brand-blue)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-blue)) 75%, hsl(var(--brand-blue))),
               linear-gradient(120deg, hsl(var(--brand-teal)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-teal)) 75%, hsl(var(--brand-teal)))
             `,
-            backgroundSize: '40px 40px',
-            backgroundPosition: '0 0, 0 0, 20px 20px, 20px 20px'
+            backgroundSize: "40px 40px",
+            backgroundPosition: "0 0, 0 0, 20px 20px, 20px 20px",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
@@ -72,7 +80,9 @@ function TeamCard({
       {/* Content */}
       <div className="flex flex-col items-center pt-[60px] px-4">
         <h3 className="font-medium text-lg text-black">{name}</h3>
-        <p className="mt-2.5 font-normal text-[15px] text-[#78858F] text-center">{role}</p>
+        <p className="mt-2.5 font-normal text-[15px] text-[#78858F] text-center">
+          {role}
+        </p>
 
         <div className="mt-4 flex gap-2">
           {github && (
