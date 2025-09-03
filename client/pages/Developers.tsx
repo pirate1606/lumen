@@ -85,8 +85,16 @@ function DeveloperCard({
 export default function DevelopersPage() {
   return (
     <div className="relative">
+      <FlickeringGrid
+        className="absolute inset-0 -z-10 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
       <Navbar />
-      <main className="pt-28 pb-16">
+      <main className="relative z-10 pt-28 pb-16">
         <section className="container space-y-6">
           <h1 className="text-3xl font-bold">Developers</h1>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
