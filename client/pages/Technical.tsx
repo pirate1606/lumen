@@ -8,12 +8,9 @@ import { cn } from "@/lib/utils";
 export default function TechnicalPage() {
   return (
     <div className="relative">
-      <InteractiveGridPattern
-        className={cn("[mask-image:radial-gradient(900px_circle_at_50%_20%,white,transparent)]")}
-        width={36}
-        height={36}
-        squares={[72, 96]}
-        squaresClassName="fill-brand-blue/50"
+      <DotPattern
+        glow={true}
+        className={cn("[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]")}
       />
       <Navbar />
       <main className="pt-24 relative z-10">
