@@ -265,8 +265,7 @@ export default function Technical() {
         {/* Team LUMEN Section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Team LUMEN</h2>
-            <p className="mt-3 text-muted-foreground">Meet the developers behind LUMEN</p>
+            <h2 className="text-4xl font-black text-foreground">Team LUMEN</h2>
           </div>
 
           <div className="flex justify-center w-full overflow-x-auto">
