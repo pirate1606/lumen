@@ -32,7 +32,7 @@ export default function Features() {
           Powerful Features
         </h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Each module includes interactive examples and micro‑interactions.
+          Each module includes interactive examples and micro��interactions.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -190,6 +190,11 @@ export default function Features() {
                 {/* Interactive upload calling backend */}
                 <LabAnalyzer />
               </Suspense>
+            </div>
+            <div className="mt-4 pt-3 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Prototype: naver-clova-ix/donut-base-finetuned-docvqa
+              </p>
             </div>
           </Card>
 
