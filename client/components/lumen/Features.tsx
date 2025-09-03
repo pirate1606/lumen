@@ -32,7 +32,7 @@ export default function Features() {
           Powerful Features
         </h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Each module includes interactive examples and micro��interactions.
+          Each module includes interactive examples and micro‑interactions.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -74,6 +74,11 @@ export default function Features() {
             <p className="mt-3 text-xs text-muted-foreground">
               Pulse effect indicates severity.
             </p>
+            <div className="mt-4 pt-3 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Prototype: ai4bharat/indic-gpt
+              </p>
+            </div>
           </Card>
 
           {/* 5.2 AI Specialist Modules */}
