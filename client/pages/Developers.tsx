@@ -107,7 +107,7 @@ export default function DevelopersPage() {
             />
             <DeveloperCard name="Priyal" />
             <DeveloperCard name="Paras" />
-            <DeveloperCard name="Kshitij" />
+            <DeveloperCard name="Kshitij" github={"https://github.com/okshitij"} linkedin={"https://www.linkedin.com/in/kshitij-kalrao/"} />
           </div>
         </section>
       </main>
