@@ -22,7 +22,6 @@ export default function Index() {
         <Languages />
         <Demo />
         <Emergency />
-        <About />
         <Contact />
       </main>
       <Footer />
