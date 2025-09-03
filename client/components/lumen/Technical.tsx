@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Cpu, Shield, Workflow, Link2 } from "lucide-react";
+import { BookOpen, Cpu, Shield, Workflow, Link2, Github, Linkedin } from "lucide-react";
 
 import ZoomableImage from "./ZoomableImage";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
