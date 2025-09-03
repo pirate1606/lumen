@@ -21,6 +21,71 @@ function Card({
   );
 }
 
+function TeamCard({
+  name,
+  role,
+  photo,
+  github,
+  linkedin,
+}: {
+  name: string;
+  role: string;
+  photo?: string;
+  github?: string;
+  linkedin?: string;
+}) {
+  return (
+    <div className="relative w-[300px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100">
+      {/* Background/Header */}
+      <div className="h-48 w-full rounded-t-[20px] bg-gradient-to-br from-brand-blue/20 to-brand-teal/20"></div>
+
+      {/* Avatar */}
+      <div className="absolute w-[114px] h-[114px] bg-white rounded-full flex justify-center items-center top-[calc(50%-57px)] border-4 border-white shadow-lg">
+        {photo ? (
+          <img
+            src={photo}
+            alt={`${name} photo`}
+            className="w-[100px] h-[100px] rounded-full object-cover object-top"
+          />
+        ) : (
+          <div className="w-[100px] h-[100px] rounded-full bg-muted grid place-items-center text-muted-foreground text-xs">
+            Photo
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col items-center pt-[60px] px-4">
+        <h3 className="font-medium text-lg text-black">{name}</h3>
+        <p className="mt-2.5 font-normal text-[15px] text-[#78858F] text-center">{role}</p>
+
+        <div className="mt-4 flex gap-2">
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent transition-all duration-300"
+            >
+              <Github size={16} />
+            </a>
+          )}
+          {linkedin && (
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent transition-all duration-300"
+            >
+              <Linkedin size={16} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Technical() {
   return (
     <section id="technical" className="py-20">
