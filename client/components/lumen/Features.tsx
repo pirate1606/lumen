@@ -85,7 +85,7 @@ export default function Features() {
           <Card>
             <h3 className="font-semibold">AI Specialist Modules</h3>
             <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT (for clinician + patient summaries)
+              GPT-4-Vision (image understanding + summaries)
             </p>
             <Tabs defaultValue="derm" className="mt-3">
               <TabsList className="grid grid-cols-3 gap-2 bg-secondary rounded-lg p-1">
@@ -129,7 +129,7 @@ export default function Features() {
             </Tabs>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype: Salesforce/blip-image-captioning-base
+                Prototype model used: Salesforce/blip-image-captioning-base, liuhaotian/llava-v1.5-7b
               </p>
             </div>
           </Card>
