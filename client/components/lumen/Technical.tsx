@@ -270,7 +270,7 @@ export default function Technical() {
           </div>
 
           <div className="flex justify-center w-full overflow-x-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 max-w-6xl px-8 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 max-w-7xl px-6 justify-items-center">
               <TeamCard
                 name="Sanchit"
                 role="Full Stack Developer"
