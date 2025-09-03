@@ -37,7 +37,7 @@ function TeamCard({
   return (
     <div className="relative w-full max-w-[350px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100">
       {/* Triangular Background Pattern */}
-      <div className="h-48 w-full rounded-t-[20px] overflow-hidden relative">
+      <div className="h-48 w-full rounded-t-[20px] overflow-hidden relative pr-7">
         <div
           className="absolute inset-0 opacity-80"
           style={{
