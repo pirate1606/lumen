@@ -9,7 +9,6 @@ export default function TechnicalPage() {
   return (
     <div className="relative">
       <DotPattern
-        glow={true}
         className={cn("[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]")}
       />
       <Navbar />
