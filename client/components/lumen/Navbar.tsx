@@ -45,6 +45,7 @@ export default function Navbar() {
               >
                 Developers
               </a>
+              <AnimatedThemeToggler />
             </div>
             <div className="flex items-center gap-2">
               <a href="#demo" className="btn-cta">
