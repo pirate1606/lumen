@@ -8,8 +8,15 @@ import { cn } from "@/lib/utils";
 export default function TechnicalPage() {
   return (
     <div className="relative">
+      <InteractiveGridPattern
+        className={cn("[mask-image:radial-gradient(700px_circle_at_50%_20%,white,transparent)]")}
+        width={20}
+        height={20}
+        squares={[120, 160]}
+        squaresClassName="fill-brand-blue/50"
+      />
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-24 relative z-10">
         <section className="py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-center">
