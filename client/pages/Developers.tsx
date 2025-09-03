@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import { Github, Linkedin } from "lucide-react";
+import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
 const CV_URL =
   "https://cdn.builder.io/o/assets%2F445519f4dc2147579ea6fb2243527f29%2F64cb59ca2bb34b889f0a978bf1db3d56?alt=media&token=f1b2d979-0083-4c4e-9bca-11ee86faadd6&apiKey=445519f4dc2147579ea6fb2243527f29";
