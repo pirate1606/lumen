@@ -73,7 +73,7 @@ export default function Technical() {
         </div>
 
 
-        <div className="mt-6 grid lg:grid-cols-2 gap-6">
+        <div className="mt-6 grid lg:grid-cols-1 gap-6">
           <Card title="System Architecture (WIP)">
             <div className="space-y-3">
               <p>
@@ -114,7 +114,9 @@ export default function Technical() {
               </p>
             </div>
           </Card>
+        </div>
 
+        <div className="mt-6 grid lg:grid-cols-2 gap-6">
           <Card title="Core Workflows / Pipelines">
             <div className="space-y-3">
               <div>
