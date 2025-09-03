@@ -179,7 +179,7 @@ export default function Features() {
           <Card>
             <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
             <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT (for explanation + follow-up)
+              GPT-4 / GPT-5 (for explanation + follow-up)
             </p>
             <div className="mt-3">
               <Suspense
@@ -193,7 +193,7 @@ export default function Features() {
             </div>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype: naver-clova-ix/donut-base-finetuned-docvqa
+                Prototype model used: naver-clova-ix/donut-base-finetuned-docvqa, microsoft/layoutlmv3-base
               </p>
             </div>
           </Card>
