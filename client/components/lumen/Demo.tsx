@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import LabAnalyzer from "./LabAnalyzer";
 import HealthcareChatbot from "./HealthcareChatbot";
-import VoiceProcessor from "./VoiceProcessor";
 
 function Cube() {
   return (
@@ -16,7 +15,6 @@ function Cube() {
 }
 
 export default function Demo() {
-  const [activeTab, setActiveTab] = useState("chatbot");
 
   return (
     <section id="demo" className="py-20 scroll-mt-28 md:scroll-mt-32">
@@ -76,57 +74,6 @@ export default function Demo() {
           </div>
         </div>
 
-        {/* Additional AI Tools */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Additional AI Tools
-          </h3>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Voice Processing */}
-            <div className="card p-6">
-              <h4 className="font-semibold text-lg mb-4">
-                Voice-to-Text Processing
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                Convert your voice to text using OpenAI Whisper AI technology
-              </p>
-              <VoiceProcessor />
-            </div>
-
-            {/* Model Status */}
-            <div className="card p-6">
-              <h4 className="font-semibold text-lg mb-4">AI Model Status</h4>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
-                  <span className="font-medium">Healthcare Chatbot</span>
-                  <span className="text-green-600 text-sm">✅ Working</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
-                  <span className="font-medium">Speech Recognition</span>
-                  <span className="text-green-600 text-sm">✅ Working</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
-                  <span className="font-medium">Text Embeddings</span>
-                  <span className="text-green-600 text-sm">✅ Working</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
-                  <span className="font-medium">Text-to-Speech</span>
-                  <span className="text-red-600 text-sm">❌ Broken</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
-                  <span className="font-medium">Document Analysis</span>
-                  <span className="text-red-600 text-sm">❌ Broken</span>
-                </div>
-              </div>
-              <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-                <p className="text-sm text-blue-800">
-                  <strong>Success Rate:</strong> 3 out of 5 models working (60%)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
