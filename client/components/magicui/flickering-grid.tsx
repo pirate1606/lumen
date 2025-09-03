@@ -19,7 +19,7 @@ export function FlickeringGrid({
   style,
   color = "#6B7280",
   maxOpacity = 0.5,
-  flickerChance = 0.08,
+  flickerChance = 0.1,
   squareSize = 4,
   gridGap = 6,
   width,
