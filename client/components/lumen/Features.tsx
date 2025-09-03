@@ -167,6 +167,11 @@ export default function Features() {
               <p className="mt-3 text-sm text-muted-foreground">
                 Open dedicated PEARL page →
               </p>
+              <div className="mt-4 pt-3 border-t border-border">
+                <p className="text-xs text-muted-foreground">
+                  Prototype: Custom PEARL Architecture
+                </p>
+              </div>
             </Card>
           </a>
 
