@@ -108,12 +108,23 @@ export default function Emergency() {
                       </div>
                     ))}
                   </div>
-                  <button
-                    onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
-                    className="mt-4 btn-cta"
-                  >
-                    Play Audio
-                  </button>
+                  <div className="mt-4 flex items-center gap-3">
+                    <button
+                      onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
+                      className="btn-cta"
+                    >
+                      Play Audio
+                    </button>
+                    <HeroVideoDialog
+                      className=""
+                      videoSrc={VIDEO_LINK}
+                      trigger={
+                        <button className="px-4 py-2 rounded-lg border border-input bg-background font-semibold hover:bg-accent">
+                          Play Video
+                        </button>
+                      }
+                    />
+                  </div>
                 </div>
               </div>
             ))}
