@@ -8,9 +8,7 @@ import { cn } from "@/lib/utils";
 export default function TechnicalPage() {
   return (
     <div className="relative">
-      <DotPattern
-        className={cn("[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]")}
-      />
+      <WarpBackground className="absolute inset-0 -z-10 border-0 p-0 rounded-none" />
       <Navbar />
       <main className="pt-24 relative z-10">
         <section className="py-12">
