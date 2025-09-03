@@ -246,6 +246,45 @@ export default function Technical() {
             </div>
           </Card>
         </div>
+
+        {/* Team LUMEN Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground">Team LUMEN</h2>
+            <p className="mt-3 text-muted-foreground">Meet the developers behind LUMEN</p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
+              <TeamCard
+                name="Sanchit"
+                role="Full Stack Developer"
+                photo="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2F4587d99ad8074e819191cef9f9a8a2c7?format=webp&width=800"
+                github="https://github.com/sanchit1606"
+                linkedin="https://www.linkedin.com/in/sanchit1606/"
+              />
+              <TeamCard
+                name="Priyal"
+                role="AI/ML Engineer"
+                github="https://github.com/priyal-username"
+                linkedin="https://www.linkedin.com/in/priyal-profile/"
+              />
+              <TeamCard
+                name="Paras"
+                role="Backend Developer"
+                github="https://github.com/paras-username"
+                linkedin="https://www.linkedin.com/in/paras-profile/"
+              />
+              <TeamCard
+                name="Kshitij"
+                role="Frontend Developer"
+                photo="https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2Fad5f0becc276472fbcdb59aafec6d377?format=webp&width=800"
+                github="https://github.com/okshitij"
+                linkedin="https://www.linkedin.com/in/kshitij-kalrao/"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
