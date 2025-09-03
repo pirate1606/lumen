@@ -214,6 +214,11 @@ export default function Features() {
                 LUMEN: Eligible under ABC scheme — steps 1–3…
               </div>
             </div>
+            <div className="mt-4 pt-3 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Prototype: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+              </p>
+            </div>
           </Card>
 
           {/* 5.6 Preliminary Triage & Emergency Education */}
