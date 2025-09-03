@@ -91,11 +91,7 @@ export default function Technical() {
               "typescript","javascript","dart","java","react","flutter","android","html5","css3","nodedotjs","express","nextdotjs","prisma","amazonaws","postgresql","firebase","nginx","vercel","testinglibrary","jest","cypress","docker","git","jira","github","gitlab","visualstudiocode","androidstudio","sonarqube","figma",
             ];
             const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
-            return (
-              <div className="relative flex items-center justify-center overflow-hidden">
-                <IconCloud images={images} />
-              </div>
-            );
+            return <IconCloud images={images} />;
           })()}
         </Card>
       </div>
@@ -209,54 +205,7 @@ export default function Technical() {
           </Card>
         </div>
 
-        <div className="mt-6 grid lg:grid-cols-2 gap-6">
-          <Card title="OpenAI Usage & Costing (illustrative)">
-            <div className="space-y-2">
-              <p>
-                Models: GPT for reasoning/chat, Vision for image inputs, TTS for
-                audio, and Embeddings for retrieval. Pricing changes over
-                time—always verify on OpenAI’s pricing page before deployment.
-              </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
-                  Chat reasoning: choose fast/light models for triage; fall back
-                  to higher-context when needed.
-                </li>
-                <li>
-                  Vision: used for derm/radiology hints with strict safety
-                  messaging.
-                </li>
-                <li>TTS: emergency audio instructions and localized voices.</li>
-                <li>Embeddings: for healthcare leaflets and scheme FAQs.</li>
-              </ul>
-              <div className="rounded-lg bg-secondary p-3 text-xs">
-                Example monthly estimate (prototype scale): 5k chats (light
-                model), 500 vision calls, 2k TTS minutes, 50k embed tokens —
-                check live pricing to compute exact cost and caps.
-              </div>
-            </div>
-          </Card>
-        </div>
 
-        <div className="mt-6 grid lg:grid-cols-1 gap-6">
-          <Card title="Attribution & Disclaimer">
-            <p>
-              Built from scratch by the above team. The same work or ideas must
-              not be copied, reused, or adapted without explicit consent from
-              the authors.
-            </p>
-            <p className="text-xs">
-              LUMEN is a research prototype and does not replace professional
-              medical advice.
-            </p>
-            <a
-              className="inline-flex items-center gap-2 text-brand-blue hover:underline"
-              href="#top"
-            >
-              <Link2 className="size-4" /> Back to top
-            </a>
-          </Card>
-        </div>
       </div>
     </section>
   );
