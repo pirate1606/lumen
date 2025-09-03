@@ -3,7 +3,6 @@ import { BookOpen, Cpu, Shield, Workflow, Link2 } from "lucide-react";
 
 import ZoomableImage from "./ZoomableImage";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { IconCloud } from "@/components/magicui/icon-cloud";
 
 function Card({
   title,
@@ -73,17 +72,6 @@ export default function Technical() {
           </Card>
         </div>
 
-      <div className="mt-6 grid lg:grid-cols-1 gap-6">
-        <Card title="Tech Stack">
-          {(() => {
-            const slugs = [
-              "typescript","javascript","dart","java","react","flutter","android","html5","css3","nodedotjs","express","nextdotjs","prisma","amazonaws","postgresql","firebase","nginx","vercel","testinglibrary","jest","cypress","docker","git","jira","github","gitlab","visualstudiocode","androidstudio","sonarqube","figma",
-            ];
-            const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
-            return <IconCloud images={images} />;
-          })()}
-        </Card>
-      </div>
 
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
           <Card title="System Architecture (WIP)">
