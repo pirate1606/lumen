@@ -42,7 +42,7 @@ export default function Features() {
               Symptoms-Based Diagnosis & Guidance
             </h3>
             <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT (Chat Models)
+              GPT-4 / GPT-5 (chat completion), Whisper (ASR), OpenAI TTS
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Input via text, audio, or image. Output includes urgency.
@@ -76,7 +76,7 @@ export default function Features() {
             </p>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype: ai4bharat/indic-gpt
+                Prototype model used: ai4bharat/indic-gpt, openai/whisper-small, coqui/XTTS-v2
               </p>
             </div>
           </Card>
