@@ -107,7 +107,7 @@ export default function DevelopersPage() {
             />
             <DeveloperCard name="Priyal" />
             <DeveloperCard name="Paras" />
-            <DeveloperCard name="Kshitij" github={"https://github.com/okshitij"} linkedin={"https://www.linkedin.com/in/kshitij-kalrao/"} />
+            <DeveloperCard name="Kshitij" photo={"https://cdn.builder.io/api/v1/image/assets%2F445519f4dc2147579ea6fb2243527f29%2Fad5f0becc276472fbcdb59aafec6d377?format=webp&width=800"} cv={"https://cdn.builder.io/o/assets%2F445519f4dc2147579ea6fb2243527f29%2F7f75cef3e8af4aed861908f4f0157feb?alt=media&token=7d56d39a-2836-40ea-8049-ea52e4aa6feb&apiKey=445519f4dc2147579ea6fb2243527f29"} github={"https://github.com/okshitij"} linkedin={"https://www.linkedin.com/in/kshitij-kalrao/"} />
           </div>
         </section>
       </main>
