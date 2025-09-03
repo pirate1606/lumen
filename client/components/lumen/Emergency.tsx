@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
+import { Flame, Zap, Waves, LifeBuoy, Syringe, PhoneCall, Shield, FirstAidKit } from "lucide-react";
 
 const slides = [
   {
