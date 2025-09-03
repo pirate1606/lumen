@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import TechnicalContent from "@/components/lumen/Technical";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 
 export default function TechnicalPage() {
