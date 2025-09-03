@@ -89,12 +89,12 @@ export default function Emergency() {
           <div className="flex gap-6">
             {slides.map((s) => {
               const iconsMap: Record<string, React.ElementType[]> = {
-                Snakebite: [Syringe, Shield, FirstAidKit],
+                Snakebite: [Syringe, Shield, HeartPulse],
                 Drowning: [Waves, LifeBuoy, PhoneCall],
-                "Fire Burns": [Flame, FirstAidKit, Shield],
+                "Fire Burns": [Flame, HeartPulse, Shield],
                 "Electric Shock": [Zap, Shield, PhoneCall],
               };
-              const icons = iconsMap[s.title] || [FirstAidKit, Shield, PhoneCall];
+              const icons = iconsMap[s.title] || [HeartPulse, Shield, PhoneCall];
               return (
                 <div
                   key={s.title}
