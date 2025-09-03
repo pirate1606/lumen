@@ -142,7 +142,7 @@ export default function Features() {
             <Card>
               <h3 className="font-semibold">PEARL CT Reconstruction</h3>
               <p className="mt-1 text-sm font-bold text-brand-blue">
-                Custom AI Model (Computer Vision)
+                Custom PEARL Architecture (Computer Vision)
               </p>
               <div className="mt-3 h-48 rounded-xl bg-secondary overflow-hidden">
                 <Suspense
@@ -169,7 +169,7 @@ export default function Features() {
               </p>
               <div className="mt-4 pt-3 border-t border-border">
                 <p className="text-xs text-muted-foreground">
-                  Prototype: Custom PEARL Architecture
+                  Prototype model used: Custom PEARL Architecture
                 </p>
               </div>
             </Card>
