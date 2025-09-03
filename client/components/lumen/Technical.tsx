@@ -25,7 +25,6 @@ export default function Technical() {
   return (
     <section id="technical" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         <div className="mt-10 grid lg:grid-cols-2 gap-6">
           <Card title="Problem Statement">
             <p>
@@ -71,7 +70,6 @@ export default function Technical() {
             </ul>
           </Card>
         </div>
-
 
         <div className="mt-6 grid lg:grid-cols-1 gap-6">
           <Card title="System Architecture (WIP)">
@@ -183,8 +181,6 @@ export default function Technical() {
             </div>
           </Card>
         </div>
-
-
       </div>
     </section>
   );

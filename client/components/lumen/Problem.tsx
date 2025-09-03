@@ -38,23 +38,40 @@ const listItems = [
   },
 ];
 
-function ListCard({ icon, color, title, subtitle }: { icon: string; color: string; title: string; subtitle: string }) {
+function ListCard({
+  icon,
+  color,
+  title,
+  subtitle,
+}: {
+  icon: string;
+  color: string;
+  title: string;
+  subtitle: string;
+}) {
   return (
     <figure
       className={cn(
         "relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl p-4",
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
+        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
       <div className="flex flex-row items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-2xl" style={{ backgroundColor: color }}>
+        <div
+          className="flex size-10 items-center justify-center rounded-2xl"
+          style={{ backgroundColor: color }}
+        >
           <span className="text-lg">{icon}</span>
         </div>
         <div className="flex flex-col overflow-hidden">
-          <figcaption className="whitespace-pre text-base sm:text-lg font-medium dark:text-white">{title}</figcaption>
-          <p className="text-sm text-muted-foreground dark:text-white/60">{subtitle}</p>
+          <figcaption className="whitespace-pre text-base sm:text-lg font-medium dark:text-white">
+            {title}
+          </figcaption>
+          <p className="text-sm text-muted-foreground dark:text-white/60">
+            {subtitle}
+          </p>
         </div>
       </div>
     </figure>
@@ -75,7 +92,13 @@ export default function Problem() {
             </p>
             <AnimatedList className="mt-6">
               {listItems.map((it, idx) => (
-                <ListCard key={idx} icon={it.icon} color={it.color} title={it.title} subtitle={it.subtitle} />
+                <ListCard
+                  key={idx}
+                  icon={it.icon}
+                  color={it.color}
+                  title={it.title}
+                  subtitle={it.subtitle}
+                />
               ))}
             </AnimatedList>
           </div>
@@ -91,7 +114,12 @@ export default function Problem() {
                 <motion.div
                   key={i}
                   className="absolute"
-                  style={{ top: p.top as string | undefined, left: (p as any).left, right: (p as any).right, bottom: (p as any).bottom }}
+                  style={{
+                    top: p.top as string | undefined,
+                    left: (p as any).left,
+                    right: (p as any).right,
+                    bottom: (p as any).bottom,
+                  }}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}

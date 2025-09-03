@@ -32,10 +32,20 @@ export default function HeroVideoDialog({
         {trigger ? (
           <div className={cn(className)}>{trigger}</div>
         ) : (
-          <button aria-label="Play video" className={cn("relative block overflow-hidden rounded-xl border", className)}>
+          <button
+            aria-label="Play video"
+            className={cn(
+              "relative block overflow-hidden rounded-xl border",
+              className,
+            )}
+          >
             {thumbnailSrc ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={thumbnailSrc} alt={thumbnailAlt} className="w-full h-auto" />
+              <img
+                src={thumbnailSrc}
+                alt={thumbnailAlt}
+                className="w-full h-auto"
+              />
             ) : (
               <div className="grid h-40 w-64 place-items-center bg-secondary text-sm text-muted-foreground">
                 Play Video

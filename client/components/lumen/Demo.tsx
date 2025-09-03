@@ -15,7 +15,6 @@ function Cube() {
 }
 
 export default function Demo() {
-
   return (
     <section id="demo" className="py-20 scroll-mt-28 md:scroll-mt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -73,7 +72,6 @@ export default function Demo() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -25,13 +25,16 @@ export function DotPattern({
   };
 
   return (
-    <div className={cn("absolute inset-0 -z-10 pointer-events-none", className)}>
+    <div
+      className={cn("absolute inset-0 -z-10 pointer-events-none", className)}
+    >
       <div className="h-full w-full" style={style} />
       {glow && (
         <div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(500px 500px at 50% 20%, rgba(56,124,255,0.18), rgba(56,124,255,0) 60%)",
+            background:
+              "radial-gradient(500px 500px at 50% 20%, rgba(56,124,255,0.18), rgba(56,124,255,0) 60%)",
             filter: "blur(0.5px)",
           }}
         />

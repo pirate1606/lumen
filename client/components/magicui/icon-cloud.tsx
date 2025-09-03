@@ -9,7 +9,12 @@ export type IconCloudProps = {
   autoRotateSpeed?: number; // deg per second
 };
 
-export function IconCloud({ images, radius = 140, className, autoRotateSpeed = 12 }: IconCloudProps) {
+export function IconCloud({
+  images,
+  radius = 140,
+  className,
+  autoRotateSpeed = 12,
+}: IconCloudProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [rot, setRot] = useState({ x: -15, y: 0 });
   const vel = useRef({ x: 0, y: autoRotateSpeed / 60 });
@@ -63,8 +68,20 @@ export function IconCloud({ images, radius = 140, className, autoRotateSpeed = 1
   }, [autoRotateSpeed]);
 
   return (
-    <div ref={containerRef} className={cn("relative mx-auto h-[420px] w-full max-w-3xl perspective-[800px]", className)}>
-      <div className="absolute inset-0" style={{ transformStyle: "preserve-3d", transform: `rotateX(${rot.x}deg) rotateY(${rot.y}deg)` }}>
+    <div
+      ref={containerRef}
+      className={cn(
+        "relative mx-auto h-[420px] w-full max-w-3xl perspective-[800px]",
+        className,
+      )}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          transformStyle: "preserve-3d",
+          transform: `rotateX(${rot.x}deg) rotateY(${rot.y}deg)`,
+        }}
+      >
         {nodes.map((n, i) => {
           // Project 3D point to 2D using CSS transforms
           const tx = n.x * radius;

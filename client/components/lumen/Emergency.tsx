@@ -2,7 +2,16 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
-import { Flame, Zap, Waves, LifeBuoy, Syringe, PhoneCall, Shield, HeartPulse } from "lucide-react";
+import {
+  Flame,
+  Zap,
+  Waves,
+  LifeBuoy,
+  Syringe,
+  PhoneCall,
+  Shield,
+  HeartPulse,
+} from "lucide-react";
 
 const slides = [
   {
@@ -94,7 +103,11 @@ export default function Emergency() {
                 "Fire Burns": [Flame, HeartPulse, Shield],
                 "Electric Shock": [Zap, Shield, PhoneCall],
               };
-              const icons = iconsMap[s.title] || [HeartPulse, Shield, PhoneCall];
+              const icons = iconsMap[s.title] || [
+                HeartPulse,
+                Shield,
+                PhoneCall,
+              ];
               return (
                 <div
                   key={s.title}
@@ -119,7 +132,9 @@ export default function Emergency() {
                     </div>
                     <div className="mt-4 flex items-center gap-2 flex-nowrap">
                       <InteractiveHoverButton
-                        onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
+                        onClick={() =>
+                          speak(`${s.title}. ${s.steps.join(". ")}`)
+                        }
                         className="min-w-[120px] px-3 py-1.5 text-sm"
                       >
                         Play Audio

@@ -9,10 +9,16 @@ export type AnimatedListProps = {
   intervalMs?: number; // speed of popping
 };
 
-export function AnimatedList({ children, className, intervalMs = 1500 }: AnimatedListProps) {
+export function AnimatedList({
+  children,
+  className,
+  intervalMs = 1500,
+}: AnimatedListProps) {
   const base = useMemo(() => React.Children.toArray(children), [children]);
   const counter = useRef(0);
-  const [queue, setQueue] = useState(() => base.map((c, i) => ({ node: c, id: `${i}-0` })));
+  const [queue, setQueue] = useState(() =>
+    base.map((c, i) => ({ node: c, id: `${i}-0` })),
+  );
 
   useEffect(() => {
     setQueue(base.map((c, i) => ({ node: c, id: `${i}-0` })));
@@ -21,14 +27,23 @@ export function AnimatedList({ children, className, intervalMs = 1500 }: Animate
 
   useEffect(() => {
     if (queue.length <= 1) return;
-    const t = setInterval(() => {
-      setQueue((prev) => {
-        if (prev.length <= 1) return prev;
-        const [first, ...rest] = prev;
-        counter.current += 1;
-        return [...rest, { node: first.node, id: `${first.id.split("-")[0]}-${counter.current}` }];
-      });
-    }, Math.max(400, intervalMs));
+    const t = setInterval(
+      () => {
+        setQueue((prev) => {
+          if (prev.length <= 1) return prev;
+          const [first, ...rest] = prev;
+          counter.current += 1;
+          return [
+            ...rest,
+            {
+              node: first.node,
+              id: `${first.id.split("-")[0]}-${counter.current}`,
+            },
+          ];
+        });
+      },
+      Math.max(400, intervalMs),
+    );
     return () => clearInterval(t);
   }, [intervalMs, queue.length]);
 

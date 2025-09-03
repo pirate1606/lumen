@@ -98,8 +98,15 @@ export function InteractiveGridPattern({
   }, [cols, rows]);
 
   return (
-    <div ref={wrapperRef} className={cn("absolute inset-0 -z-10 pointer-events-none", className)}>
-      <svg className="h-full w-full" viewBox={`0 0 ${viewW} ${viewH}`} preserveAspectRatio="none">
+    <div
+      ref={wrapperRef}
+      className={cn("absolute inset-0 -z-10 pointer-events-none", className)}
+    >
+      <svg
+        className="h-full w-full"
+        viewBox={`0 0 ${viewW} ${viewH}`}
+        preserveAspectRatio="none"
+      >
         {cells.map((c) => {
           const isHover = c.i === hoveredIndex;
           return (

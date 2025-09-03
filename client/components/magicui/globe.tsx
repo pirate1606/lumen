@@ -11,7 +11,13 @@ type DottedSphereProps = {
   lonStep?: number;
 };
 
-function DottedSphere({ radius = 1.2, color = "#6B7280", dotSize = 0.02, latStep = 4, lonStep = 4 }: DottedSphereProps) {
+function DottedSphere({
+  radius = 1.2,
+  color = "#6B7280",
+  dotSize = 0.02,
+  latStep = 4,
+  lonStep = 4,
+}: DottedSphereProps) {
   const ref = useRef<THREE.Points>(null!);
 
   const geometry = useMemo(() => {
@@ -28,7 +34,10 @@ function DottedSphere({ radius = 1.2, color = "#6B7280", dotSize = 0.02, latStep
       }
     }
     const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    geo.setAttribute(
+      "position",
+      new THREE.Float32BufferAttribute(positions, 3),
+    );
     return geo;
   }, [radius, latStep, lonStep]);
 
@@ -51,12 +60,27 @@ export type GlobeProps = {
 
 export function Globe({ className, style, dotColor = "#6B7280" }: GlobeProps) {
   return (
-    <div className={cn("pointer-events-none absolute left-1/2 -translate-x-1/2 w-[560px] h-[560px]", className)} style={style}>
-      <Canvas gl={{ antialias: true, alpha: true }} camera={{ position: [0, 0, 3.4], fov: 45 }}>
+    <div
+      className={cn(
+        "pointer-events-none absolute left-1/2 -translate-x-1/2 w-[560px] h-[560px]",
+        className,
+      )}
+      style={style}
+    >
+      <Canvas
+        gl={{ antialias: true, alpha: true }}
+        camera={{ position: [0, 0, 3.4], fov: 45 }}
+      >
         <ambientLight intensity={0.8} />
         <directionalLight intensity={0.6} position={[2, 2, 2]} />
         <group rotation={[0, 0, 0.2]}>
-          <DottedSphere radius={1.5} color={dotColor} dotSize={0.02} latStep={3.5} lonStep={3.5} />
+          <DottedSphere
+            radius={1.5}
+            color={dotColor}
+            dotSize={0.02}
+            latStep={3.5}
+            lonStep={3.5}
+          />
         </group>
       </Canvas>
     </div>
