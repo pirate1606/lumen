@@ -227,7 +227,7 @@ export default function Features() {
               Preliminary Triage & Emergency Education
             </h3>
             <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT (grounded on emergency guidelines)
+              GPT-4 / GPT-5 (retrieval-grounded responses)
             </p>
             <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
               {["Snakebite", "Drowning", "Burns", "Electric Shock"].map((t) => (
@@ -244,7 +244,7 @@ export default function Features() {
             </p>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype: sentence-transformers/all-mpnet-base-v2
+                Prototype model used: sentence-transformers/all-mpnet-base-v2
               </p>
             </div>
           </Card>
