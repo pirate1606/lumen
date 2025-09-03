@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 const slides = [
   {
@@ -81,12 +82,6 @@ export default function Emergency() {
               Auto‑play carousel with pictorial + audio guide.
             </p>
           </div>
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            className="px-4 py-2 rounded-lg border bg-background font-semibold hover:bg-accent"
-          >
-            {playing ? "Pause" : "Play"}
-          </button>
         </div>
 
         <div className="mt-6 overflow-hidden" ref={emblaRef}>
@@ -109,19 +104,18 @@ export default function Emergency() {
                     ))}
                   </div>
                   <div className="mt-4 flex items-center gap-3">
-                    <button
+                    <InteractiveHoverButton
                       onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
-                      className="btn-cta"
+                      className="min-w-[150px]"
                     >
                       Play Audio
-                    </button>
+                    </InteractiveHoverButton>
                     <HeroVideoDialog
-                      className=""
                       videoSrc={VIDEO_LINK}
                       trigger={
-                        <button className="px-4 py-2 rounded-lg border border-input bg-background font-semibold hover:bg-accent">
+                        <InteractiveHoverButton className="min-w-[150px]">
                           Play Video
-                        </button>
+                        </InteractiveHoverButton>
                       }
                     />
                   </div>
