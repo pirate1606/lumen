@@ -48,7 +48,11 @@ export function FlickeringGrid({
     document.body.removeChild(d);
     const m = rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
     if (!m) return { r: 107, g: 114, b: 128 };
-    return { r: parseInt(m[1], 10), g: parseInt(m[2], 10), b: parseInt(m[3], 10) };
+    return {
+      r: parseInt(m[1], 10),
+      g: parseInt(m[2], 10),
+      b: parseInt(m[3], 10),
+    };
   }, [color]);
 
   useEffect(() => {
@@ -161,10 +165,24 @@ export function FlickeringGrid({
       if (animRef.current != null) cancelAnimationFrame(animRef.current);
       animRef.current = null;
     };
-  }, [colorRGBA.r, colorRGBA.g, colorRGBA.b, flickerChance, gridGap, maxOpacity, spacing, speed, squareSize]);
+  }, [
+    colorRGBA.r,
+    colorRGBA.g,
+    colorRGBA.b,
+    flickerChance,
+    gridGap,
+    maxOpacity,
+    spacing,
+    speed,
+    squareSize,
+  ]);
 
   return (
-    <div ref={parentRef} className={cn("pointer-events-none", className)} style={style}>
+    <div
+      ref={parentRef}
+      className={cn("pointer-events-none", className)}
+      style={style}
+    >
       <canvas ref={canvasRef} className="block w-full h-full" />
     </div>
   );
