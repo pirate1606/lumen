@@ -105,8 +105,16 @@ export default function DevelopersPage() {
               github={"https://github.com/sanchit1606"}
               linkedin={"https://www.linkedin.com/in/sanchit1606/"}
             />
-            <DeveloperCard name="Priyal" />
-            <DeveloperCard name="Paras" />
+            <DeveloperCard
+              name="Priyal"
+              github="https://github.com/priyal-username"
+              linkedin="https://www.linkedin.com/in/priyal-profile/"
+            />
+            <DeveloperCard
+              name="Paras"
+              github="https://github.com/paras-username"
+              linkedin="https://www.linkedin.com/in/paras-profile/"
+            />
             <DeveloperCard
               name="Kshitij"
               photo={
