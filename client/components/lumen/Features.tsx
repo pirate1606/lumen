@@ -178,6 +178,9 @@ export default function Features() {
           {/* 5.4 Lab Report Analyzer */}
           <Card>
             <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
+            <p className="mt-1 text-sm font-bold text-brand-blue">
+              GPT (for explanation + follow-up)
+            </p>
             <div className="mt-3">
               <Suspense
                 fallback={
