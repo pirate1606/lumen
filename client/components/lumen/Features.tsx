@@ -204,7 +204,7 @@ export default function Features() {
               Government Schemes & Benefits Assistant
             </h3>
             <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT (grounded on govt. docs)
+              GPT-4 / GPT-5 (retrieval-grounded responses)
             </p>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <div className="rounded-xl bg-secondary p-3">
@@ -216,7 +216,7 @@ export default function Features() {
             </div>
             <div className="mt-4 pt-3 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Prototype: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+                Prototype model used: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
               </p>
             </div>
           </Card>
