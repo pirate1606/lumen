@@ -21,10 +21,12 @@ const slides = [
       "Keep limb immobilized",
       "Reach hospital quickly",
     ],
+    videoUrl: "https://www.youtube.com/embed/ryJo_A-rJ6Y",
   },
   {
-    title: "Drowning",
-    steps: ["Call for help", "Provide rescue breaths", "Seek emergency care"],
+    title: "CPR",
+    steps: ["Call for help", "Check responsiveness", "Start chest compressions"],
+    videoUrl: "https://www.youtube.com/embed/VSKhM-ev808",
   },
   {
     title: "Fire Burns",
@@ -33,6 +35,7 @@ const slides = [
       "Cover with clean cloth",
       "Do not pop blisters",
     ],
+    videoUrl: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
   },
   {
     title: "Electric Shock",
@@ -41,11 +44,9 @@ const slides = [
       "Do not touch victim directly",
       "Call emergency",
     ],
+    videoUrl: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
   },
 ];
-
-const VIDEO_LINK =
-  "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb";
 
 export default function Emergency() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start" });
