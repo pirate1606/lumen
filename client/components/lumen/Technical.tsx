@@ -35,7 +35,7 @@ function TeamCard({
   linkedin?: string;
 }) {
   return (
-    <div className="relative w-[300px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100 mx-4">
+    <div className="relative w-[300px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100">
       {/* Triangular Background Pattern */}
       <div className="h-48 w-full rounded-t-[20px] overflow-hidden relative">
         <div
