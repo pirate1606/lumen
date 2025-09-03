@@ -50,12 +50,6 @@ export default function Navbar() {
               <a href="#demo" className="btn-cta">
                 Try LUMEN
               </a>
-              <a
-                href="#about"
-                className="px-4 py-2 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
-              >
-                Learn More
-              </a>
             </div>
           </nav>
         </div>
