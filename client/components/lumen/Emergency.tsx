@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 const slides = [
   {
