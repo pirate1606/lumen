@@ -10,10 +10,10 @@ export default function TechnicalPage() {
   return (
     <div className="relative">
       <InteractiveGridPattern
-        className={cn("[mask-image:radial-gradient(700px_circle_at_50%_20%,white,transparent)]")}
-        width={20}
-        height={20}
-        squares={[120, 160]}
+        className={cn("[mask-image:radial-gradient(900px_circle_at_50%_20%,white,transparent)]")}
+        width={36}
+        height={36}
+        squares={[72, 96]}
         squaresClassName="fill-brand-blue/50"
       />
       <Navbar />
@@ -29,6 +29,23 @@ export default function TechnicalPage() {
             </p>
           </div>
         </section>
+
+        <section className="py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center">Tech Stack</h2>
+            <p className="text-center text-muted-foreground">Libraries, platforms, and tooling we use</p>
+            <div className="mt-6">
+              {(() => {
+                const slugs = [
+                  "typescript","javascript","dart","java","react","flutter","android","html5","css3","nodedotjs","express","nextdotjs","prisma","amazonaws","postgresql","firebase","nginx","vercel","testinglibrary","jest","cypress","docker","git","jira","github","gitlab","visualstudiocode","androidstudio","sonarqube","figma",
+                ];
+                const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
+                return <IconCloud images={images} />;
+              })()}
+            </div>
+          </div>
+        </section>
+
         <TechnicalContent />
       </main>
       <Footer />
