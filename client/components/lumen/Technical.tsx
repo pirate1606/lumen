@@ -26,17 +26,6 @@ export default function Technical() {
   return (
     <section id="technical" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-2">
-          <BookOpen className="text-brand-blue" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Technical Side — LUMEN
-          </h2>
-        </div>
-        <p className="mt-2 text-center text-muted-foreground max-w-3xl mx-auto">
-          Project documentation covering problem, features, architecture,
-          workflows, system design, OpenAI usage and costs, references, and team
-          details.
-        </p>
 
         <div className="mt-10 grid lg:grid-cols-2 gap-6">
           <Card title="Problem Statement">
