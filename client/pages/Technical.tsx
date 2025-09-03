@@ -3,7 +3,6 @@ import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import TechnicalContent from "@/components/lumen/Technical";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
-import { IconCloud } from "@/components/magicui/icon-cloud";
 import { cn } from "@/lib/utils";
 
 export default function TechnicalPage() {
@@ -29,23 +28,6 @@ export default function TechnicalPage() {
             </p>
           </div>
         </section>
-
-        <section className="py-10">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center">Tech Stack</h2>
-            <p className="text-center text-muted-foreground">Libraries, platforms, and tooling we use</p>
-            <div className="mt-6">
-              {(() => {
-                const slugs = [
-                  "typescript","javascript","dart","java","react","flutter","android","html5","css3","nodedotjs","express","nextdotjs","prisma","amazonaws","postgresql","firebase","nginx","vercel","testinglibrary","jest","cypress","docker","git","jira","github","gitlab","visualstudiocode","androidstudio","sonarqube","figma",
-                ];
-                const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
-                return <IconCloud images={images} />;
-              })()}
-            </div>
-          </div>
-        </section>
-
         <TechnicalContent />
       </main>
       <Footer />
