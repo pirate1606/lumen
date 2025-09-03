@@ -242,6 +242,11 @@ export default function Features() {
             <p className="mt-3 text-xs text-muted-foreground">
               Tiles flip into pictorial sequence on interaction.
             </p>
+            <div className="mt-4 pt-3 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Prototype: sentence-transformers/all-mpnet-base-v2
+              </p>
+            </div>
           </Card>
         </div>
       </div>
