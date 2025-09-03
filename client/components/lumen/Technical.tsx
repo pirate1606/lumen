@@ -35,9 +35,24 @@ function TeamCard({
   linkedin?: string;
 }) {
   return (
-    <div className="relative w-[300px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100">
-      {/* Background/Header */}
-      <div className="h-48 w-full rounded-t-[20px] bg-gradient-to-br from-brand-blue/20 to-brand-teal/20"></div>
+    <div className="relative w-[300px] h-[384px] flex flex-col items-center rounded-[20px] bg-white shadow-lg border border-gray-100 mx-4">
+      {/* Triangular Background Pattern */}
+      <div className="h-48 w-full rounded-t-[20px] overflow-hidden relative">
+        <div
+          className="absolute inset-0 opacity-80"
+          style={{
+            background: `
+              linear-gradient(60deg, hsl(var(--brand-blue)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-blue)) 75%, hsl(var(--brand-blue))),
+              linear-gradient(120deg, hsl(var(--brand-teal)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-teal)) 75%, hsl(var(--brand-teal))),
+              linear-gradient(60deg, hsl(var(--brand-blue)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-blue)) 75%, hsl(var(--brand-blue))),
+              linear-gradient(120deg, hsl(var(--brand-teal)) 25%, transparent 25.5%, transparent 75%, hsl(var(--brand-teal)) 75%, hsl(var(--brand-teal)))
+            `,
+            backgroundSize: '40px 40px',
+            backgroundPosition: '0 0, 0 0, 20px 20px, 20px 20px'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
+      </div>
 
       {/* Avatar */}
       <div className="absolute w-[114px] h-[114px] bg-white rounded-full flex justify-center items-center top-[calc(50%-57px)] border-4 border-white shadow-lg">
