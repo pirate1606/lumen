@@ -5,6 +5,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from "@/components/ui/dialog";
 
 export type HeroVideoDialogProps = {
@@ -14,6 +15,7 @@ export type HeroVideoDialogProps = {
   thumbnailAlt?: string;
   trigger?: React.ReactNode; // optional custom trigger (e.g., a button)
   animationStyle?: "from-center" | "from-top" | "from-bottom";
+  title?: string;
 };
 
 export default function HeroVideoDialog({
@@ -22,6 +24,7 @@ export default function HeroVideoDialog({
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
   trigger,
+  title = "First aid video",
 }: HeroVideoDialogProps) {
   return (
     <Dialog>
@@ -29,7 +32,7 @@ export default function HeroVideoDialog({
         {trigger ? (
           <div className={cn(className)}>{trigger}</div>
         ) : (
-          <button className={cn("relative block overflow-hidden rounded-xl border", className)}>
+          <button aria-label="Play video" className={cn("relative block overflow-hidden rounded-xl border", className)}>
             {thumbnailSrc ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={thumbnailSrc} alt={thumbnailAlt} className="w-full h-auto" />
@@ -42,11 +45,12 @@ export default function HeroVideoDialog({
         )}
       </DialogTrigger>
       <DialogContent className="w-full max-w-4xl p-0 overflow-hidden">
+        <DialogTitle className="sr-only">{title}</DialogTitle>
         <div className="aspect-video w-full">
           <iframe
             className="h-full w-full"
             src={videoSrc}
-            title="Video"
+            title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
