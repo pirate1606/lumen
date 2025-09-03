@@ -117,17 +117,17 @@ export default function Emergency() {
                         );
                       })}
                     </div>
-                    <div className="mt-4 flex items-center gap-3 flex-wrap">
+                    <div className="mt-4 flex items-center gap-2 flex-nowrap">
                       <InteractiveHoverButton
                         onClick={() => speak(`${s.title}. ${s.steps.join(". ")}`)}
-                        className="min-w-[150px]"
+                        className="min-w-[120px] px-3 py-1.5 text-sm"
                       >
                         Play Audio
                       </InteractiveHoverButton>
                       <HeroVideoDialog
                         videoSrc={VIDEO_LINK}
                         trigger={
-                          <InteractiveHoverButton className="min-w-[150px]">
+                          <InteractiveHoverButton className="min-w-[120px] px-3 py-1.5 text-sm">
                             Play Video
                           </InteractiveHoverButton>
                         }
