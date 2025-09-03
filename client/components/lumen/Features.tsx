@@ -32,7 +32,7 @@ export default function Features() {
           Powerful Features
         </h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Each module includes interactive examples and micro‑interactions.
+          Each module includes interactive examples and micro��interactions.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -41,6 +41,9 @@ export default function Features() {
             <h3 className="font-semibold">
               Symptoms-Based Diagnosis & Guidance
             </h3>
+            <p className="mt-1 text-sm font-bold text-brand-blue">
+              GPT (Chat Models)
+            </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Input via text, audio, or image. Output includes urgency.
             </p>
