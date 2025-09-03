@@ -100,7 +100,7 @@ export default function Emergency() {
             {slides.map((s) => {
               const iconsMap: Record<string, React.ElementType[]> = {
                 Snakebite: [Syringe, Shield, HeartPulse],
-                Drowning: [Waves, LifeBuoy, PhoneCall],
+                CPR: [HeartPulse, LifeBuoy, PhoneCall],
                 "Fire Burns": [Flame, HeartPulse, Shield],
                 "Electric Shock": [Zap, Shield, PhoneCall],
               };
@@ -141,7 +141,7 @@ export default function Emergency() {
                         Play Audio
                       </InteractiveHoverButton>
                       <HeroVideoDialog
-                        videoSrc={VIDEO_LINK}
+                        videoSrc={s.videoUrl}
                         trigger={
                           <InteractiveHoverButton className="min-w-[120px] px-3 py-1.5 text-sm">
                             Play Video
