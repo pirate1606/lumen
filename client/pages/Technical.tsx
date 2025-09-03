@@ -14,6 +14,7 @@ export default function TechnicalPage() {
         color="#60A5FA"
         maxOpacity={0.5}
         flickerChance={0.1}
+        speed={0.25}
       />
       <Navbar />
       <main className="pt-24 relative z-10">
