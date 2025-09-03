@@ -1,8 +1,9 @@
 import React from "react";
-import { BookOpen, Cpu, Shield, Workflow, Users2, Link2 } from "lucide-react";
+import { BookOpen, Cpu, Shield, Workflow, Link2 } from "lucide-react";
 
 import ZoomableImage from "./ZoomableImage";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { IconCloud } from "@/components/magicui/icon-cloud";
 
 function Card({
   title,
@@ -82,6 +83,22 @@ export default function Technical() {
             </ul>
           </Card>
         </div>
+
+      <div className="mt-6 grid lg:grid-cols-1 gap-6">
+        <Card title="Tech Stack">
+          {(() => {
+            const slugs = [
+              "typescript","javascript","dart","java","react","flutter","android","html5","css3","nodedotjs","express","nextdotjs","prisma","amazonaws","postgresql","firebase","nginx","vercel","testinglibrary","jest","cypress","docker","git","jira","github","gitlab","visualstudiocode","androidstudio","sonarqube","figma",
+            ];
+            const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
+            return (
+              <div className="relative flex items-center justify-center overflow-hidden">
+                <IconCloud images={images} />
+              </div>
+            );
+          })()}
+        </Card>
+      </div>
 
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
           <Card title="System Architecture (WIP)">
@@ -193,30 +210,6 @@ export default function Technical() {
         </div>
 
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
-          <Card title="System Design">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                Client: React 18 + Vite + Tailwind; SPA with sections and
-                interactive demos.
-              </li>
-              <li>
-                Server: Express with routes under /api; split handlers per
-                feature.
-              </li>
-              <li>
-                Data: Option for vector store and object storage for
-                reports/images.
-              </li>
-              <li>
-                Observability: Hooks for error tracking, metrics, and latency
-                budgets.
-              </li>
-              <li>
-                Internationalization: locale-first copy, units, and voices.
-              </li>
-            </ul>
-          </Card>
-
           <Card title="OpenAI Usage & Costing (illustrative)">
             <div className="space-y-2">
               <p>
@@ -245,32 +238,7 @@ export default function Technical() {
           </Card>
         </div>
 
-        <div className="mt-6 grid lg:grid-cols-3 gap-6">
-          <Card title="References">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>WHO health workforce density benchmarks.</li>
-              <li>
-                Government of India rural population share and health reports.
-              </li>
-              <li>
-                Peer-reviewed literature on snakebite mortality and first aid.
-              </li>
-              <li>
-                Medical imaging low-dose reconstruction (PEARL and related
-                work).
-              </li>
-            </ul>
-          </Card>
-          <Card title="Team">
-            <div className="flex items-center gap-2 text-foreground">
-              <Users2 />{" "}
-              <span className="font-medium">
-                Sanchit, Paras, Piryal, Kshitij
-              </span>
-            </div>
-            <p>Final-year B.Tech students, VIT Pune.</p>
-            <p>Project under OpenAI × NXTWave Buildathon.</p>
-          </Card>
+        <div className="mt-6 grid lg:grid-cols-1 gap-6">
           <Card title="Attribution & Disclaimer">
             <p>
               Built from scratch by the above team. The same work or ideas must
