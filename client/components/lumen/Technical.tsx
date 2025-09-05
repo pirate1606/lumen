@@ -119,9 +119,17 @@ export default function Technical() {
           <Card title="Problem Statement">
             <ul className="list-disc pl-5 space-y-1">
               <li>India faces uneven access to timely, quality healthcare.</li>
-              <li>Rural populations (~65%) have limited primary and specialist care.</li>
-              <li>Doctor density is ~20.6 per 10,000 versus WHO's 44.5 benchmark.</li>
-              <li>Preventable emergencies (e.g., ~58,000 snakebite deaths annually) persist due to delayed triage and guidance.</li>
+              <li>
+                Rural populations (~65%) have limited primary and specialist
+                care.
+              </li>
+              <li>
+                Doctor density is ~20.6 per 10,000 versus WHO's 44.5 benchmark.
+              </li>
+              <li>
+                Preventable emergencies (e.g., ~58,000 snakebite deaths
+                annually) persist due to delayed triage and guidance.
+              </li>
             </ul>
             <p>
               LUMEN addresses this with a unified assistant that triages
