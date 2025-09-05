@@ -178,29 +178,30 @@ export default function Features() {
           </a>
 
           {/* 5.4 Lab Report Analyzer */}
-          <Card>
-            <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
-            <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT-4 / GPT-5 (for explanation + follow-up)
-            </p>
-            <div className="mt-3">
-              <Suspense
-                fallback={
-                  <div className="text-sm text-muted-foreground">Loading…</div>
-                }
-              >
-                {/* Interactive upload calling backend */}
-                <LabAnalyzer />
-              </Suspense>
-            </div>
-            <div className="mt-4 pt-3 border-t border-border">
-              <p className="text-xs text-muted-foreground">
-                Prototype model used:
-                naver-clova-ix/donut-base-finetuned-docvqa,
-                microsoft/layoutlmv3-base
+          <a
+            href="/lab"
+            className="block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl"
+          >
+            <Card>
+              <h3 className="font-semibold">Lab Report Analyzer & Follow‑Up</h3>
+              <p className="mt-1 text-sm font-bold text-brand-blue">
+                GPT-4 / GPT-5 (for explanation + follow-up)
               </p>
-            </div>
-          </Card>
+              <div className="mt-3 h-32 rounded-xl bg-secondary overflow-hidden grid place-items-center">
+                <div className="text-sm text-muted-foreground text-center px-4">
+                  Upload a lab report image, get extracted values, risk flags, and
+                  suggested follow‑up. Open dedicated Lab page →
+                </div>
+              </div>
+              <div className="mt-4 pt-3 border-t border-border">
+                <p className="text-xs text-muted-foreground">
+                  Prototype model used:
+                  naver-clova-ix/donut-base-finetuned-docvqa,
+                  microsoft/layoutlmv3-base
+                </p>
+              </div>
+            </Card>
+          </a>
 
           {/* 5.5 Government Schemes Assistant */}
           <Card>
