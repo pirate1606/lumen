@@ -117,13 +117,12 @@ export default function Technical() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mt-10 grid lg:grid-cols-2 gap-6">
           <Card title="Problem Statement">
-            <p>
-              India faces uneven access to timely, quality healthcare. Rural
-              populations (~65%) have limited primary and specialist care,
-              doctor density is ~20.6 per 10,000 versus WHO's 44.5 benchmark,
-              and preventable emergencies (e.g., ~58,000 snakebite deaths
-              annually) persist due to delayed triage and guidance.
-            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>India faces uneven access to timely, quality healthcare.</li>
+              <li>Rural populations (~65%) have limited primary and specialist care.</li>
+              <li>Doctor density is ~20.6 per 10,000 versus WHO's 44.5 benchmark.</li>
+              <li>Preventable emergencies (e.g., ~58,000 snakebite deaths annually) persist due to delayed triage and guidance.</li>
+            </ul>
             <p>
               LUMEN addresses this with a unified assistant that triages
               symptoms, explains diagnostics, reconstructs low-dose CT,
