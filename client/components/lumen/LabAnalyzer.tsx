@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-interface ResultItem {
+export interface ResultItem {
   key: string;
   value: string;
   status: "low" | "high" | "normal" | "unknown";
 }
 
-interface AnalyzeResponse {
+export interface AnalyzeResponse {
   fields?: Record<string, string>;
   items?: ResultItem[];
   severity?: "green" | "yellow" | "red";
@@ -16,7 +16,11 @@ interface AnalyzeResponse {
   note?: string;
 }
 
-export default function LabAnalyzer() {
+export default function LabAnalyzer({
+  onResult,
+}: {
+  onResult?: (data: AnalyzeResponse) => void;
+} = {}) {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<AnalyzeResponse | null>(null);
@@ -56,7 +60,11 @@ export default function LabAnalyzer() {
           `${json?.error || `Upload failed (HTTP ${res.status})`} ${json?.details ? `— ${json.details}` : ""}`,
         );
       } else {
-        setData(json || { error: "Empty response" });
+        const payload = json || { error: "Empty response" };
+        setData(payload);
+        if (payload && !payload.error) {
+          onResult?.(payload);
+        }
       }
     } catch (e: any) {
       setErr(e?.message || String(e));
