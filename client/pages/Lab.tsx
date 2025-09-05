@@ -6,9 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
-import { Bell, CalendarDays, ClipboardList, Download, Trash2, Check } from "lucide-react";
+import {
+  Bell,
+  CalendarDays,
+  ClipboardList,
+  Download,
+  Trash2,
+  Check,
+} from "lucide-react";
 
 interface FollowUpPlan {
   id: string;
@@ -27,8 +40,14 @@ function formatDateTimeLocal(d: Date) {
 
 function toICS(plan: FollowUpPlan) {
   const start = new Date(plan.dateISO);
-  const dt = start.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
-  const end = new Date(start.getTime() + 45 * 60 * 1000).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+  const dt = start
+    .toISOString()
+    .replace(/[-:]/g, "")
+    .replace(/\.\d{3}Z$/, "Z");
+  const end = new Date(start.getTime() + 45 * 60 * 1000)
+    .toISOString()
+    .replace(/[-:]/g, "")
+    .replace(/\.\d{3}Z$/, "Z");
   const titleMap = {
     retest: "Re-test Labs",
     consultation: "Doctor Consultation",
@@ -78,19 +97,23 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
     d.setHours(9, 0, 0, 0);
     return d;
   });
-  const [timeLocal, setTimeLocal] = React.useState<string>(() => formatDateTimeLocal(new Date()));
+  const [timeLocal, setTimeLocal] = React.useState<string>(() =>
+    formatDateTimeLocal(new Date()),
+  );
   const [notes, setNotes] = React.useState<string>("");
 
   React.useEffect(() => {
     if (result?.summary) {
       const base = result.summary;
-      const abn = (result.items || []).filter((i) => i.status === "low" || i.status === "high");
+      const abn = (result.items || []).filter(
+        (i) => i.status === "low" || i.status === "high",
+      );
       const suggestion =
         result.severity === "red"
           ? "Book a clinician consult within 48 hours."
           : result.severity === "yellow"
-          ? "Re-test and review diet/medication."
-          : "Maintain routine checkups.";
+            ? "Re-test and review diet/medication."
+            : "Maintain routine checkups.";
       setNotes(`${base} ${suggestion}`.trim());
     }
   }, [result]);
@@ -105,7 +128,9 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
     }
   }, [timeLocal]);
 
-  const abnormal = (result?.items || []).filter((i) => i.status === "low" || i.status === "high");
+  const abnormal = (result?.items || []).filter(
+    (i) => i.status === "low" || i.status === "high",
+  );
 
   const savePlan = () => {
     const plan: FollowUpPlan = {
@@ -114,7 +139,11 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
       dateISO: date.toISOString(),
       notes,
       severity: result?.severity,
-      abnormal: abnormal.map((i) => ({ key: i.key, status: i.status, value: i.value })),
+      abnormal: abnormal.map((i) => ({
+        key: i.key,
+        status: i.status,
+        value: i.value,
+      })),
     };
     add(plan);
   };
@@ -144,10 +173,14 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
             <div>
               <label className="text-sm font-medium">Type</label>
               <Select value={kind} onValueChange={(v) => setKind(v as any)}>
-                <SelectTrigger className="mt-1"><SelectValue placeholder="Select" /></SelectTrigger>
+                <SelectTrigger className="mt-1">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="retest">Re-test labs</SelectItem>
-                  <SelectItem value="consultation">Doctor consultation</SelectItem>
+                  <SelectItem value="consultation">
+                    Doctor consultation
+                  </SelectItem>
                   <SelectItem value="lifestyle">Lifestyle check-in</SelectItem>
                 </SelectContent>
               </Select>
@@ -185,9 +218,18 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
               <div className="font-medium mb-1">Abnormal values</div>
               <ul className="grid sm:grid-cols-2 gap-2">
                 {abnormal.map((i) => (
-                  <li key={i.key} className="rounded-md border p-2 flex items-center justify-between">
-                    <span>{i.key}: {i.value}</span>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${i.status === "high" ? "bg-red-100 text-red-700" : "bg-amber-100 text-amber-700"}`}>{i.status}</span>
+                  <li
+                    key={i.key}
+                    className="rounded-md border p-2 flex items-center justify-between"
+                  >
+                    <span>
+                      {i.key}: {i.value}
+                    </span>
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded-full ${i.status === "high" ? "bg-red-100 text-red-700" : "bg-amber-100 text-amber-700"}`}
+                    >
+                      {i.status}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -210,7 +252,9 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
         </CardHeader>
         <CardContent className="space-y-3">
           {plans.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No follow‑ups yet. Create one on the left.</p>
+            <p className="text-sm text-muted-foreground">
+              No follow‑ups yet. Create one on the left.
+            </p>
           ) : (
             <ul className="space-y-2">
               {plans.map((p) => (
@@ -218,20 +262,38 @@ function FollowUpPlanner({ result }: { result: AnalyzeResponse | null }) {
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
                       <div className="font-medium">
-                        {p.kind === "retest" ? "Re-test labs" : p.kind === "consultation" ? "Doctor consultation" : "Lifestyle check-in"}
+                        {p.kind === "retest"
+                          ? "Re-test labs"
+                          : p.kind === "consultation"
+                            ? "Doctor consultation"
+                            : "Lifestyle check-in"}
                       </div>
                       <div className="text-sm text-muted-foreground">
-                        {new Date(p.dateISO).toLocaleString()} {p.severity ? `• ${p.severity}` : ""}
+                        {new Date(p.dateISO).toLocaleString()}{" "}
+                        {p.severity ? `• ${p.severity}` : ""}
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant={p.done ? "outline" : "default"} onClick={() => toggleDone(p.id)} className="flex items-center gap-2">
-                        <Check className="w-4 h-4" /> {p.done ? "Mark Undone" : "Mark Done"}
+                      <Button
+                        variant={p.done ? "outline" : "default"}
+                        onClick={() => toggleDone(p.id)}
+                        className="flex items-center gap-2"
+                      >
+                        <Check className="w-4 h-4" />{" "}
+                        {p.done ? "Mark Undone" : "Mark Done"}
                       </Button>
-                      <Button variant="outline" onClick={() => downloadICS(p)} className="flex items-center gap-2">
+                      <Button
+                        variant="outline"
+                        onClick={() => downloadICS(p)}
+                        className="flex items-center gap-2"
+                      >
                         <Download className="w-4 h-4" /> Calendar
                       </Button>
-                      <Button variant="outline" onClick={() => remove(p.id)} className="flex items-center gap-2">
+                      <Button
+                        variant="outline"
+                        onClick={() => remove(p.id)}
+                        className="flex items-center gap-2"
+                      >
                         <Trash2 className="w-4 h-4" /> Remove
                       </Button>
                     </div>
@@ -255,7 +317,9 @@ export default function LabPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-16">
         <section className="container space-y-6">
-          <h1 className="text-3xl font-bold">Lab Report Analyzer & Follow‑Up</h1>
+          <h1 className="text-3xl font-bold">
+            Lab Report Analyzer & Follow‑Up
+          </h1>
           <Card>
             <CardHeader>
               <CardTitle>Upload Lab Report</CardTitle>

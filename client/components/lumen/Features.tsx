@@ -189,8 +189,8 @@ export default function Features() {
               </p>
               <div className="mt-3 h-32 rounded-xl bg-secondary overflow-hidden grid place-items-center">
                 <div className="text-sm text-muted-foreground text-center px-4">
-                  Upload a lab report image, get extracted values, risk flags, and
-                  suggested follow‑up. Open dedicated Lab page →
+                  Upload a lab report image, get extracted values, risk flags,
+                  and suggested follow‑up. Open dedicated Lab page →
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-border">
