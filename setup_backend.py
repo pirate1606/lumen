@@ -114,7 +114,6 @@ def create_env_template():
 # Copy this to .env and fill in your values
 
 # Hugging Face API Key
-HF_API_KEY=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
 
 # Model Configuration
 INDIC_GPT_MODEL=ai4bharat/indic-gpt
