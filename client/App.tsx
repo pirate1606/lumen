@@ -57,4 +57,18 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+const container = document.getElementById("root")!;
+
+declare global {
+  interface Window {
+    __lumen_root?: import("react-dom/client").Root;
+  }
+}
+
+if ((window as any).__lumen_root) {
+  (window as any).__lumen_root.render(<App />);
+} else {
+  const root = createRoot(container);
+  (window as any).__lumen_root = root;
+  root.render(<App />);
+}
