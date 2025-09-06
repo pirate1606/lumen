@@ -105,7 +105,7 @@ export default function DevelopersPage() {
           <HyperText className="text-center text-4xl sm:text-5xl" animateOnHover startOnView>
             Team LUMEN
           </HyperText>
-          <p className="text-center text-muted-foreground">meet the developers of team lumen</p>
+          <p className="text-center text-black font-bold uppercase text-4xl sm:text-5xl">MEET THE DEVELOPERS OF TEAM LUMEN</p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <DeveloperCard
               name="Sanchit"
