@@ -10,7 +10,12 @@ export default function VideoText({
   className?: string;
 }) {
   return (
-    <h1 className={cn("relative font-extrabold leading-tight tracking-tight", className)}>
+    <h1
+      className={cn(
+        "relative font-extrabold leading-tight tracking-tight",
+        className,
+      )}
+    >
       <span className="video-text inline-block align-top">{text}</span>
     </h1>
   );

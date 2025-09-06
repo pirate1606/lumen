@@ -47,7 +47,10 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-cta animate-pulse" />
               Now under development
             </div>
-            <VideoText text="LUMEN" className="mt-4 text-5xl sm:text-6xl lg:text-7xl" />
+            <VideoText
+              text="LUMEN"
+              className="mt-4 text-5xl sm:text-6xl lg:text-7xl"
+            />
             <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
@@ -66,12 +69,24 @@ export default function Hero() {
               </div>
             </div>
             <div className="relative z-10 mt-12 sm:mt-14 lg:mt-16 flex flex-wrap gap-4">
-              <a href="/#features" className="learn-more" aria-label="Try LUMEN">
-                <span className="circle"><span className="icon arrow" /></span>
+              <a
+                href="/#features"
+                className="learn-more"
+                aria-label="Try LUMEN"
+              >
+                <span className="circle">
+                  <span className="icon arrow" />
+                </span>
                 <span className="button-text">Try LUMEN</span>
               </a>
-              <a href="/technical" className="learn-more" aria-label="Learn More">
-                <span className="circle"><span className="icon arrow" /></span>
+              <a
+                href="/technical"
+                className="learn-more"
+                aria-label="Learn More"
+              >
+                <span className="circle">
+                  <span className="icon arrow" />
+                </span>
                 <span className="button-text">Learn More</span>
               </a>
             </div>
