@@ -66,18 +66,14 @@ export default function Hero() {
                 />
               </div>
             </div>
-            <div className="relative z-10 mt-12 sm:mt-14 lg:mt-16 flex flex-wrap gap-3">
-              <a
-                href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
-                className="btn-cta"
-              >
-                Try LUMEN
+            <div className="relative z-10 mt-12 sm:mt-14 lg:mt-16 flex flex-wrap gap-4">
+              <a href="/#features" className="learn-more" aria-label="Try LUMEN">
+                <span className="circle"><span className="icon arrow" /></span>
+                <span className="button-text">Try LUMEN</span>
               </a>
-              <a
-                href="#about"
-                className="px-6 py-3 rounded-lg border border-input bg-background font-semibold hover:bg-accent"
-              >
-                Learn More
+              <a href="/technical" className="learn-more" aria-label="Learn More">
+                <span className="circle"><span className="icon arrow" /></span>
+                <span className="button-text">Learn More</span>
               </a>
             </div>
           </motion.div>
