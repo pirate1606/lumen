@@ -281,11 +281,13 @@ export default function Technical() {
 
         {/* Team LUMEN Section */}
         <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-foreground">Team LUMEN</h2>
-          </div>
-
-          <div className="flex justify-center w-full overflow-x-auto">
+          <div className="relative flex justify-center w-full overflow-x-auto">
+            <div className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 z-20">
+              <button className="button" aria-label="Team LUMEN">
+                <span className="actual-text">&nbsp;Team LUMEN&nbsp;</span>
+                <span className="hover-text" aria-hidden="true">&nbsp;Team LUMEN&nbsp;</span>
+              </button>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 max-w-[1600px] px-6 justify-items-center">
               <TeamCard
                 name="Sanchit"
