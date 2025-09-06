@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
+import { MorphingText } from "./MorphingText";
 
 class R3FErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -43,15 +44,29 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-sea bg-white/60 px-3 py-1 text-xs font-medium text-brand-blue shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-cta animate-pulse" />
-              Now launching in India
+              Now under development
             </div>
             <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
               <span className="block font-sans font-extrabold">LUMEN</span>
             </h1>
-            <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="relative mt-4 z-0 pointer-events-none">
+              <div className="scale-[0.35] sm:scale-[0.45] lg:scale-[0.5] origin-left">
+                <MorphingText
+                  texts={[
+                    "TRIAGE",
+                    "PEARL",
+                    "LAB PARSER",
+                    "AI SPECIALISTS",
+                    "GOV SCHEMES EDUCATOR",
+                  ]}
+                  className="mx-0 text-left max-w-none whitespace-nowrap"
+                />
+              </div>
+            </div>
+            <div className="relative z-10 mt-12 sm:mt-14 lg:mt-16 flex flex-wrap gap-3">
               <a
                 href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
                 className="btn-cta"
