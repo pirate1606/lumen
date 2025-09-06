@@ -40,14 +40,12 @@ const unionSchemes: Scheme[] = [
   },
   {
     name: "Nikshay (National TB Elimination Programme)",
-    description:
-      "TB patient support, treatment adherence and DBT benefits.",
+    description: "TB patient support, treatment adherence and DBT benefits.",
     url: "https://www.nikshay.in",
   },
   {
     name: "PMMVY (Pradhan Mantri Matru Vandana Yojana)",
-    description:
-      "Conditional cash benefit for pregnant and lactating women.",
+    description: "Conditional cash benefit for pregnant and lactating women.",
     url: "https://pmmvy.wcd.gov.in",
   },
   {
@@ -122,19 +120,22 @@ const stateSchemes: Record<StateKey, Scheme[]> = {
   Delhi: [
     {
       name: "Delhi Arogya Kosh",
-      description: "Financial assistance for high-end diagnostics and procedures.",
+      description:
+        "Financial assistance for high-end diagnostics and procedures.",
       url: "https://arogyakosh.delhi.gov.in",
     },
     {
       name: "Farishte Dilli Ke",
-      description: "Free emergency treatment for road accident victims in Delhi.",
+      description:
+        "Free emergency treatment for road accident victims in Delhi.",
       url: "https://health.delhi.gov.in",
     },
   ],
   Gujarat: [
     {
       name: "Mukhyamantri Amrutam (MA) & MA Vatsalya",
-      description: "Catastrophic illness coverage for poor and lower middle class.",
+      description:
+        "Catastrophic illness coverage for poor and lower middle class.",
       url: "https://maa.gujarat.gov.in",
     },
   ],
@@ -298,8 +299,8 @@ export default function SchemesPage() {
               </h1>
               <p className="mt-2 text-muted-foreground max-w-2xl">
                 Explore and access national and state-specific healthcare and
-                welfare schemes relevant to LUMEN users. All links go to official
-                portals.
+                welfare schemes relevant to LUMEN users. All links go to
+                official portals.
               </p>
             </div>
             <div className="hidden md:block">
@@ -355,8 +356,8 @@ export default function SchemesPage() {
                       </div>
                     ) : (
                       <div className="mt-2 rounded-lg border p-4 text-sm text-muted-foreground">
-                        No state-specific schemes are listed yet. Please check back
-                        soon or visit your state health department portal.
+                        No state-specific schemes are listed yet. Please check
+                        back soon or visit your state health department portal.
                       </div>
                     )
                   ) : (
