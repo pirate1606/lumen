@@ -238,6 +238,25 @@
   }
 }
 
+/* Video-like animated text fill for headings */
+.video-text {
+  color: transparent;
+  background: radial-gradient(60% 60% at 20% 20%, #22d3ee 0%, transparent 60%),
+              radial-gradient(50% 50% at 80% 40%, #1b8ee6 0%, transparent 60%),
+              conic-gradient(from 0deg, #22d3ee, #1b8ee6, #22d3ee);
+  background-size: 140% 140%, 140% 140%, 200% 200%;
+  background-position: 0% 50%, 100% 50%, 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: video-text-shift 6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 6px 20px rgba(27, 142, 230, 0.15));
+}
+@keyframes video-text-shift {
+  0% { background-position: 0% 50%, 100% 50%, 0% 50%; }
+  50% { background-position: 50% 60%, 50% 40%, 100% 50%; }
+  100% { background-position: 100% 50%, 0% 50%, 0% 50%; }
+}
+
 /* From Uiverse.io by cssbuttons-io */
 button.learn-more, a.learn-more {
   position: relative;
