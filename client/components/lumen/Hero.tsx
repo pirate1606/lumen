@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
 import { MorphingText } from "./MorphingText";
-import VideoText from "./VideoText";
+import VideoText from "./VideoText"; // ✅ keep from your branch
 
 class R3FErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -47,43 +47,39 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-cta animate-pulse" />
               Now under development
             </div>
+
+            {/* ✅ Prefer animated VideoText */}
             <VideoText
               text="LUMEN"
               className="mt-4 text-6xl sm:text-7xl lg:text-8xl"
             />
-            <div className="mt-1 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight">
+            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
+
             <div className="relative mt-4 z-0 pointer-events-none">
-              <div className="scale-[0.30] sm:scale-[0.40] lg:scale-[0.45] origin-left">
+              <div className="scale-[0.35] sm:scale-[0.45] lg:scale-[0.5] origin-left">
                 <MorphingText
                   texts={[
                     "TRIAGE",
                     "PEARL",
                     "LAB PARSER",
                     "AI SPECIALISTS",
-                    "GOV SCHEMES",
+                    "GOV SCHEMES EDUCATOR", // ✅ keep more descriptive version
                   ]}
                   className="mx-0 text-left max-w-none whitespace-nowrap"
                 />
               </div>
             </div>
+
             <div className="relative z-10 mt-12 sm:mt-14 lg:mt-16 flex flex-wrap gap-4">
-              <a
-                href="/#features"
-                className="learn-more"
-                aria-label="Try LUMEN"
-              >
+              <a href="/#features" className="learn-more" aria-label="Try LUMEN">
                 <span className="circle">
                   <span className="icon arrow" />
                 </span>
                 <span className="button-text">Try LUMEN</span>
               </a>
-              <a
-                href="/technical"
-                className="learn-more"
-                aria-label="Learn More"
-              >
+              <a href="/technical" className="learn-more" aria-label="Learn More">
                 <span className="circle">
                   <span className="icon arrow" />
                 </span>
@@ -92,6 +88,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          {/* Right side: 3D DNA */}
           <div className="relative">
             <div className="relative mx-auto max-w-md w-full">
               <div className="card p-0 overflow-hidden">
@@ -100,10 +97,7 @@ export default function Hero() {
                     <R3FErrorBoundary>
                       <Canvas camera={{ position: [1.8, 1.8, 2.2], fov: 45 }}>
                         <ambientLight intensity={0.6} />
-                        <directionalLight
-                          position={[3, 4, 2]}
-                          intensity={0.7}
-                        />
+                        <directionalLight position={[3, 4, 2]} intensity={0.7} />
                         <DNAHelix />
                         <OrbitControls
                           enablePan={false}
@@ -122,6 +116,7 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Scroll indicator */}
         <div className="mt-16 flex items-center justify-center" aria-hidden>
           <div className="flex flex-col items-center text-muted-foreground">
             <span className="text-xs">Scroll</span>
