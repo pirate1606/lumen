@@ -203,7 +203,7 @@
 
     /* button styling */
     --border-right: 6px;
-    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --text-stroke-color: hsl(var(--foreground) / 0.7);
     --animation-color: #37FF8B;
     --fs-size: 2em;
     letter-spacing: 3px;
