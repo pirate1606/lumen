@@ -5,7 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LabAnalyzer from "./LabAnalyzer";
 import PyramidLoader from "./PyramidLoader";
 
-
 function Card({ children }: { children: React.ReactNode }) {
   return (
     <div className="group card p-6 hover:-translate-y-1 transition will-change-transform [transform-style:preserve-3d]">

@@ -204,7 +204,7 @@
     /* button styling */
     --border-right: 6px;
     --text-stroke-color: hsl(var(--foreground) / 0.7);
-    --animation-color: #37FF8B;
+    --animation-color: #37ff8b;
     --fs-size: 2em;
     letter-spacing: 3px;
     text-decoration: none;
@@ -273,24 +273,24 @@
 }
 .pyramid-loader .wrapper .side1 {
   transform: rotateZ(-30deg) rotateY(90deg);
-  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
 }
 .pyramid-loader .wrapper .side2 {
   transform: rotateZ(30deg) rotateY(90deg);
-  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
 }
 .pyramid-loader .wrapper .side3 {
   transform: rotateX(30deg);
-  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
 }
 .pyramid-loader .wrapper .side4 {
   transform: rotateX(-30deg);
-  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
 }
 .pyramid-loader .wrapper .shadow {
   width: 60px;
   height: 60px;
-  background: #8B5AD5;
+  background: #8b5ad5;
   position: absolute;
   top: 0;
   left: 0;
