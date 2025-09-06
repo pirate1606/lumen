@@ -49,19 +49,24 @@ export default function Hero() {
             <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
               <span className="block font-sans font-extrabold">LUMEN</span>
             </h1>
-            <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            <div className="relative -mt-1 z-0 pointer-events-none">
+              <div className="scale-[0.35] sm:scale-[0.45] lg:scale-[0.5] origin-left">
+                <MorphingText
+                  texts={[
+                    "TRIAGE",
+                    "PEARL",
+                    "LAB PARSER",
+                    "AI SPECIALISTS",
+                    "GOV SCHEMES EDUCATOR",
+                  ]}
+                  className="mx-0 text-left"
+                />
+              </div>
+            </div>
+            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
-            <MorphingText
-              texts={[
-                "TRIAGE",
-                "PEARL",
-                "LAB PARSER",
-                "AI SPECIALISTS",
-                "GOV SCHEMES EDUCATOR",
-              ]}
-            />
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="relative z-10 mt-6 flex flex-wrap gap-3">
               <a
                 href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
                 className="btn-cta"
