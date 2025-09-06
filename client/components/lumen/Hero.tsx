@@ -53,14 +53,14 @@ export default function Hero() {
               Local Unified Medical Engine for triage
             </div>
             <div className="relative mt-4 z-0 pointer-events-none">
-              <div className="scale-[0.35] sm:scale-[0.45] lg:scale-[0.5] origin-left">
+              <div className="scale-[0.30] sm:scale-[0.40] lg:scale-[0.45] origin-left">
                 <MorphingText
                   texts={[
                     "TRIAGE",
                     "PEARL",
                     "LAB PARSER",
                     "AI SPECIALISTS",
-                    "GOV SCHEMES EDUCATOR",
+                    "GOV SCHEMES",
                   ]}
                   className="mx-0 text-left max-w-none whitespace-nowrap"
                 />
