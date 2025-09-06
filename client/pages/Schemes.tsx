@@ -257,6 +257,31 @@ function SchemeItem({ s }: { s: Scheme }) {
   );
 }
 
+function HexSocket() {
+  const gels = Array.from({ length: 37 }, (_, i) => i + 1);
+  return (
+    <div className="relative inline-block">
+      <div className="socket">
+        <div className="gel center-gel">
+          <div className="hex-brick"></div>
+          <div className="hex-brick h2"></div>
+          <div className="hex-brick h3"></div>
+        </div>
+        {gels.map((i) => {
+          const r = i % 3 === 1 ? "r1" : i % 3 === 2 ? "r2" : "r3";
+          return (
+            <div key={i} className={`gel c${i} ${r}`}>
+              <div className="hex-brick"></div>
+              <div className="hex-brick h2"></div>
+              <div className="hex-brick h3"></div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function SchemesPage() {
   const [state, setState] = React.useState<StateKey | undefined>(undefined);
   const current = state ? stateSchemes[state] : [];
@@ -266,14 +291,21 @@ export default function SchemesPage() {
       <Navbar />
       <main className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">
-            Government Schemes & Benefits Assistant
-          </h1>
-          <p className="mt-2 text-muted-foreground max-w-2xl">
-            Explore and access national and state-specific healthcare and
-            welfare schemes relevant to LUMEN users. All links go to official
-            portals.
-          </p>
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold">
+                Government Schemes & Benefits Assistant
+              </h1>
+              <p className="mt-2 text-muted-foreground max-w-2xl">
+                Explore and access national and state-specific healthcare and
+                welfare schemes relevant to LUMEN users. All links go to official
+                portals.
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <HexSocket />
+            </div>
+          </div>
 
           <div className="mt-8 grid md:grid-cols-2 gap-6 items-start">
             <Card>
