@@ -22,12 +22,6 @@ export default function Navbar() {
                 Features
               </a>
               <a
-                href="/#demo"
-                className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
-              >
-                Demo
-              </a>
-              <a
                 href="/technical"
                 className="px-4 py-2 rounded-lg hover:bg-secondary text-sm font-medium"
               >
@@ -47,7 +41,7 @@ export default function Navbar() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <a href="/#demo" className="btn-cta">
+              <a href="/#features" className="btn-cta">
                 Try LUMEN
               </a>
             </div>
