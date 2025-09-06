@@ -3,7 +3,6 @@ import Hero from "@/components/lumen/Hero";
 import Problem from "@/components/lumen/Problem";
 import Features from "@/components/lumen/Features";
 import Languages from "@/components/lumen/Languages";
-import Demo from "@/components/lumen/Demo";
 import Emergency from "@/components/lumen/Emergency";
 import Contact from "@/components/lumen/Contact";
 import Footer from "@/components/lumen/Footer";
@@ -20,7 +19,6 @@ export default function Index() {
         <SectionDivider flip />
         <Features />
         <Languages />
-        <Demo />
         <Emergency />
         <Contact />
       </main>
