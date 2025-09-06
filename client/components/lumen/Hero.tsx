@@ -49,9 +49,9 @@ export default function Hero() {
             </div>
             <VideoText
               text="LUMEN"
-              className="mt-4 text-5xl sm:text-6xl lg:text-7xl"
+              className="mt-4 text-6xl sm:text-7xl lg:text-8xl"
             />
-            <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            <div className="mt-1 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
             <div className="relative mt-4 z-0 pointer-events-none">
