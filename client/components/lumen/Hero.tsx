@@ -46,9 +46,7 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-cta animate-pulse" />
               Now under development
             </div>
-            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-              <span className="block font-sans font-extrabold">LUMEN</span>
-            </h1>
+            <VideoText text="LUMEN" className="mt-4 text-5xl sm:text-6xl lg:text-7xl" />
             <div className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
