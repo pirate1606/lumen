@@ -13,6 +13,7 @@ import TechnicalPage from "./pages/Technical";
 import PearlPage from "./pages/Pearl";
 import DevelopersPage from "./pages/Developers";
 import LabPage from "./pages/Lab";
+import SchemesPage from "./pages/Schemes";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/technical" element={<TechnicalPage />} />
           <Route path="/pearl" element={<PearlPage />} />
           <Route path="/lab" element={<LabPage />} />
+          <Route path="/schemes" element={<SchemesPage />} />
           <Route path="/developers" element={<DevelopersPage />} />
           <Route path="/Developers" element={<DevelopersPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

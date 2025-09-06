@@ -178,28 +178,36 @@ export default function Features() {
           </a>
 
           {/* 5.5 Government Schemes Assistant */}
-          <Card>
-            <h3 className="font-semibold">
-              Government Schemes & Benefits Assistant
-            </h3>
-            <p className="mt-1 text-sm font-bold text-brand-blue">
-              GPT-4 / GPT-5 (retrieval-grounded responses)
-            </p>
-            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <div className="rounded-xl bg-secondary p-3">
-                User: Dialysis help in UP?
-              </div>
-              <div className="rounded-xl bg-white p-3 shadow-sm">
-                LUMEN: Eligible under ABC scheme — steps 1–3…
-              </div>
-            </div>
-            <div className="mt-4 pt-3 border-t border-border">
-              <p className="text-xs text-muted-foreground">
-                Prototype model used:
-                sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+          <a
+            href="/schemes"
+            className="block focus:outline-none focus:ring-2 focus:ring-brand-blue/40 rounded-xl"
+          >
+            <Card>
+              <h3 className="font-semibold">
+                Government Schemes & Benefits Assistant
+              </h3>
+              <p className="mt-1 text-sm font-bold text-brand-blue">
+                GPT-4 / GPT-5 (retrieval-grounded responses)
               </p>
-            </div>
-          </Card>
+              <div className="mt-3 space-y-2 text-sm text-muted-foreground">
+                <div className="rounded-xl bg-secondary p-3">
+                  User: Dialysis help in UP?
+                </div>
+                <div className="rounded-xl bg-white p-3 shadow-sm">
+                  LUMEN: Eligible under ABC scheme — steps 1–3…
+                </div>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Open assistant page →
+              </p>
+              <div className="mt-4 pt-3 border-t border-border">
+                <p className="text-xs text-muted-foreground">
+                  Prototype model used:
+                  sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+                </p>
+              </div>
+            </Card>
+          </a>
 
           {/* 5.6 Preliminary Triage & Emergency Education */}
           <Card>
