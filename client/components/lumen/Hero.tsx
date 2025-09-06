@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
+import MorphingText from "./MorphingText";
 
 class R3FErrorBoundary extends React.Component<
   { children: React.ReactNode },
