@@ -102,10 +102,16 @@ export default function DevelopersPage() {
       <Navbar />
       <main className="relative z-10 pt-28 pb-16">
         <section className="container space-y-4">
-          <HyperText className="text-center text-5xl sm:text-6xl font-extrabold" animateOnHover startOnView>
+          <HyperText
+            className="text-center text-5xl sm:text-6xl font-extrabold"
+            animateOnHover
+            startOnView
+          >
             Team LUMEN
           </HyperText>
-          <p className="text-center text-black font-bold uppercase text-xl sm:text-2xl tracking-wide">MEET THE DEVELOPERS OF TEAM LUMEN</p>
+          <p className="text-center text-black font-bold uppercase text-xl sm:text-2xl tracking-wide">
+            MEET THE DEVELOPERS OF TEAM LUMEN
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <DeveloperCard
               name="Sanchit"
