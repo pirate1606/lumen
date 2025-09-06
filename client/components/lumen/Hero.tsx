@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import DNAHelix from "./DNAHelix";
 import { MorphingText } from "./MorphingText";
+import VideoText from "./VideoText";
 
 class R3FErrorBoundary extends React.Component<
   { children: React.ReactNode },
