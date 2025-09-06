@@ -84,14 +84,14 @@ function BeamShowcase() {
       {/* Nodes */}
       <div className="absolute inset-0 grid grid-cols-[1fr_auto_1fr] items-center">
         {/* Left: User */}
-        <div className="flex items-center">
+        <div className="flex flex-col items-center">
           <div
             ref={userRef}
             className="ml-2 size-16 rounded-full bg-secondary border border-border shadow grid place-items-center"
           >
             <UserIcon className="text-brand-blue" />
           </div>
-          <span className="ml-3 text-sm font-medium">User</span>
+          <span className="mt-2 text-sm font-medium">User</span>
         </div>
 
         {/* Center: OpenAI */}
@@ -100,7 +100,11 @@ function BeamShowcase() {
             ref={openaiRef}
             className="size-20 rounded-full bg-gradient-to-tr from-brand-blue/20 to-brand-teal/30 border border-border shadow grid place-items-center"
           >
-            <span className="text-xs font-semibold text-brand-blue">OpenAI</span>
+            <img
+              src="https://cdn.simpleicons.org/openai/1B8EE6"
+              alt="OpenAI"
+              className="h-6 w-6"
+            />
           </div>
           <div className="mt-2 inline-flex items-center text-xs text-muted-foreground">
             <Link2 className="mr-1 h-3 w-3" /> LUMEN Runtime
@@ -112,13 +116,13 @@ function BeamShowcase() {
           <div className="grid gap-3">
             {features.map(({ label, Icon }, idx) => (
               <div key={label} className="flex items-center gap-2 justify-end">
-                <span className="text-sm">{label}</span>
                 <div
                   ref={featureRefs[idx]}
                   className="size-12 rounded-full bg-white shadow border border-border grid place-items-center"
                 >
                   <Icon className="text-brand-blue" size={18} />
                 </div>
+                <span className="text-sm">{label}</span>
               </div>
             ))}
           </div>
