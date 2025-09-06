@@ -52,17 +52,15 @@ export default function Hero() {
             <div className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
               Local Unified Medical Engine for triage
             </div>
-            <div className="mt-3 text-2xl sm:text-3xl lg:text-4xl text-brand-blue">
-              <MorphingText
-                words={[
-                  "TRIAGE",
-                  "PEARL",
-                  "LAB PARSER",
-                  "AI SPECIALISTS",
-                  "GOV SCHEMES EDUCATOR",
-                ]}
-              />
-            </div>
+            <MorphingText
+              texts={[
+                "TRIAGE",
+                "PEARL",
+                "LAB PARSER",
+                "AI SPECIALISTS",
+                "GOV SCHEMES EDUCATOR",
+              ]}
+            />
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="https://82c8d44512bf43d7bb1e5ba388a30246-6f358a16-2e59-4a47-811a-d9dc9f.fly.dev/#demo"
