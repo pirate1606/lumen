@@ -282,7 +282,7 @@ export default function Technical() {
         {/* Team LUMEN Section */}
         <div className="mt-20">
           <div className="relative flex justify-center w-full overflow-x-auto">
-            <div className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 z-20">
+            <div className="absolute -top-14 md:-top-16 left-1/2 -translate-x-1/2 z-30">
               <button className="button" aria-label="Team LUMEN">
                 <span className="actual-text">&nbsp;Team LUMEN&nbsp;</span>
                 <span className="hover-text" aria-hidden="true">&nbsp;Team LUMEN&nbsp;</span>
