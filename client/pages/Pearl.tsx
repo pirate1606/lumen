@@ -25,6 +25,9 @@ export default function PearlPage() {
                       PEARL
                     </span>
                   </h1>
+                  <p className="mt-2 text-sm sm:text-base font-medium text-brand-blue">
+                    Personalized Estimated Anatomic Reconstruction
+                  </p>
                   <div className="mt-6 flex justify-center">
                     <PyramidLoader />
                   </div>
