@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/lumen/Navbar";
 import Footer from "@/components/lumen/Footer";
 import { Github, Linkedin } from "lucide-react";
+import { HyperText } from "@/components/lumen/HyperText";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
 const CV_URL =
@@ -100,8 +101,17 @@ export default function DevelopersPage() {
       />
       <Navbar />
       <main className="relative z-10 pt-28 pb-16">
-        <section className="container space-y-6">
-          <h1 className="text-3xl font-bold">Developers</h1>
+        <section className="container space-y-4">
+          <HyperText
+            className="text-center text-5xl sm:text-6xl font-extrabold"
+            animateOnHover
+            startOnView
+          >
+            Team LUMEN
+          </HyperText>
+          <p className="text-center text-black font-bold uppercase text-xl sm:text-2xl tracking-wide">
+            MEET THE DEVELOPERS OF TEAM LUMEN
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <DeveloperCard
               name="Sanchit"
